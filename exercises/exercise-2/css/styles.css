@@ -1,0 +1,19 @@
+body {
+    background-color: aliceblue;
+    max-width: 800px;
+}
+
+p {
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
+
+h2 {
+    color: rgb(0, 18, 256);
+}
+
+.highlighted_pgs {
+    background-color: burlywood;
+    color: honeydew;
+}
