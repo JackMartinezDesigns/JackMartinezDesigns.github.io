@@ -23,10 +23,8 @@ section{
     flex-wrap: wrap;
 }
 a{
-    border: 3px solid black;
-    display: inline-block;
-    padding: 0;
-
+    border: 1px solid black
+    display: inline-box;
 }
 ol{
     flex-basis: 100%;
@@ -90,7 +88,7 @@ a:hover{
         size: 222pt;
     }
     100%{
-        letter-spacing: 30px;
+        letter-spacing: 40px;
         color: blue;
         background-color: rgb(197, 75, 94);
     }
@@ -98,7 +96,7 @@ a:hover{
 
 /* applying animation */
 h1{
-    animation: tracking 2s linear infinite alternate;
+    animation: tracking 1s linear infinite alternate;
 }
 
 @keyframes tracking-winner{
@@ -120,7 +118,7 @@ h1{
 }
 
 h2{
-    animation: tracking-winner 5s linear infinite alternate;
+    animation: tracking-winner 4s linear infinite alternate;
 }
 
 .section-box {
