@@ -1,0 +1,115 @@
+body{
+    display: flex;
+    flex-wrap: wrap;
+    /* adds some space between sections (header and main) */
+    gap: 1rem;
+}
+
+header{
+    border: 1px solid red;
+    padding: 0;
+    /* means crow this box as wide as possible */
+    flex-grow: 1; 
+    /* sets an exact property relative to  page width. You will see that flex grow overrides this to fill up missing space. */
+    flex-basis: 100%;
+}
+main{
+    flex-grow: 1; 
+}
+section{
+    border: 1px solid blue;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+a{
+    border: 1px solid black;
+    display: inline-block;
+    padding: 0;
+
+}
+ol{
+    flex-basis: 100%;
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+li{
+    background-color: azure;
+    /* transition to slower 
+    transition: [property] [duration] [easing];
+    transition: [all or background-color] 1s ease
+    */
+    transition: all 1s ease;
+}
+/* change color with hover */
+li:hover{
+    /* background-color: blueviolet; */
+    /* see css gradient generator
+    not animatable: 
+        background-image: linear-gradient(90 deg red blue green);
+    but can use filter hue rotate
+        filter: hue-rotate(180deg); 
+    */
+    box-shadow: 10px 10px 3px red;
+    filter: blur(0);
+
+}
+h2{
+    flex-basis: 100%;
+    list-style: 2;
+}
+
+.example {
+    display: flex;
+    border: 2px solid black;
+    padding: 0;
+    flex-wrap: wrap;
+
+}
+
+/* how to setup an animation, trackin is the call name */
+@keyframes tracking{
+    0%{
+        letter-spacing: 0;
+        color:  red;
+        background-color: azure;
+        size: 222pt;
+    }
+    100%{
+        letter-spacing: 20px;
+        color: blue;
+        background-color: lightpink;
+    }
+}
+
+/* applying animation */
+h1{
+    animation: tracking 2s ease infinite alternate;
+}
+
+.section-box {
+    background-color: aliceblue;
+    /* this describes the flex of this element relative to the parent flex box */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    /* this describes the nested elements */
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem;
+
+    /* means crow this box as wide as possible */
+    /* sets an exact property relative to  page width. You will see that flex grow overrides this to fill up missing space. */
+    animation: tracking 2s ease infinite alternate;
+
+}
+
+.list-item{
+    border: 1px solid coral;
+    flex-basis: 50%;
+    box-sizing: border-box;
+    padding: 0;
+}
