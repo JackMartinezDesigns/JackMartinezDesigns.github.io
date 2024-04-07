@@ -131,7 +131,7 @@ h2{
     /* this describes the nested elements */
     display: flex;
     flex-wrap: wrap;
-    gap: rem;
+    gap: 1rem;
 
     /* means crow this box as wide as possible */
     /* sets an exact property relative to  page width. You will see that flex grow overrides this to fill up missing space. */
