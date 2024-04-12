@@ -1,9 +1,35 @@
+/* Navigation Styling */
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: #929180;
+    color: white;
+  }
+
 body{
     display: flex;
     flex-wrap: wrap;
     /* adds some space between sections (header and main) */
     gap: 1rem;
-    background-color: aquamarine;
+    font-family: monospace;
+    margin: 0;
 }
 
 header{
@@ -17,6 +43,12 @@ header{
 main{
     flex-grow: 1; 
 }
+h1{
+    font-family: serif;
+}
+h2{
+    font-family: serif;
+}
 section{
     border: 1px solid blue;
     padding: 0;
@@ -24,8 +56,8 @@ section{
     flex-wrap: wrap;
 }
 a{
-    display: inline-block;
-    text-decoration: none;
+    border: 1px solid black
+    display: inline-box;
 }
 ol{
     flex-basis: 100%;
@@ -53,6 +85,7 @@ p:hover{
         filter: hue-rotate(180deg); 
     */
     box-shadow: 10px 10px 3px red;
+    color: aquamarine;
     filter: blur(0);
 
 }
@@ -80,65 +113,7 @@ a:hover{
 
 }
 
-/* how to setup an animation, trackin is the call name */
-@keyframes tracking{
-    0%{
-        letter-spacing: 0;
-        color:  red;
-        background-color: rgb(43, 219, 219);
-        size: 222pt;
-    }
-    100%{
-        letter-spacing: 40px;
-        color: blue;
-        background-color: rgb(197, 75, 94);
-    }
-}
 
-/* applying animation */
-h1{
-    animation: tracking 1s linear infinite alternate;
-}
-
-@keyframes tracking-winner{
-    0%{
-        letter-spacing: 0;
-        color:  red;
-        background-color: cornflowerblue;
-        font-size: 22pt;
-        font-family: sans-serif;
-    }
-    100%{
-        letter-spacing: 40px;
-        color: blue;
-        background-color: cornflowerblue;
-        text-size-adjust: 88pt;
-        font-family: sans-serif;
-        font-size: 88pt;
-    }
-}
-
-h2{
-    animation: tracking-winner 4s linear infinite alternate;
-}
-
-.section-box {
-    background-color: aliceblue;
-    /* this describes the flex of this element relative to the parent flex box */
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-    /* this describes the nested elements */
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-
-    /* means crow this box as wide as possible */
-    /* sets an exact property relative to  page width. You will see that flex grow overrides this to fill up missing space. */
-    animation: tracking 20s linear infinite alternate;
-
-}
 
 .list-item{
     border: 1px solid coral;

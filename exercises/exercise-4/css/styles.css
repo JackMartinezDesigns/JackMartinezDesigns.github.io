@@ -1,0 +1,145 @@
+:root{
+    --bg-color: rgb(146, 140, 47);
+    --text-color: black;
+    --primary-color: maroon;
+    --secondary-color: burlywood;
+}
+
+/* fonts */
+@font-face {
+    font-family: 'Absans';
+    src: url('/fonts/Absans-Regular.woff2');
+}
+
+/* base styles */
+body {
+    background-color: var(--bg-color);
+    margin: auto;
+    font-family: 'Absans', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 1rem;
+    align-items: flex-start;
+
+}
+
+body.dark {
+    background: black;
+    color: antiquewhite;
+}
+
+light.dark{
+    background: antiquewhite;
+    color: black;
+}
+
+main {
+    background-color: var(--secondary-color);
+    /* max-width: 800px;
+    margin-left: 300px; */
+}
+
+
+img {
+    display: block;
+    max-width: 95%;
+    padding: 2rem;
+    border: 6px solid var(--primary-color);
+    box-sizing: border-box;
+
+}
+
+/* for navigation section */
+
+.navigation {
+    background-color: var(--secondary-color);
+    color: honeydew;
+    font-family: monospace;
+    /* max-width: 260px; */
+    /* position: sticky; */
+    /* top: 20px;
+    left: 20px; */
+    /* width: 100%; */
+
+    display: none;
+}
+
+.navigation a { 
+    color: grey
+}
+
+.navigation a:hover { 
+    color: lemonchiffon
+}
+
+.navigation ol { 
+    color: darkgray
+}
+
+/* text body content */
+
+h1 {
+    color: rgb(78, 78, 78);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3rem;
+    
+}
+
+h2 {
+    color: rgb(0, 18, 256);
+    font-family: 'SpratVF', Helvetica, sans-serif;
+}
+
+p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.highlighted_pgs {
+    background-color: var(--secondary-color);
+    color: honeydew;
+}
+
+/* targets a paragraph after a heading */
+h3 + p {
+    text-indent: 2rem;
+}
+h2 + p {
+    text-indent: 2rem;
+}
+h1 + p {
+    text-indent: 2rem;
+}
+
+
+/* media queries */
+/* medium screens */
+@media screen and (min-width:40rem) {
+    .navigation{
+        display: block;
+        order: 2;
+    }
+    main{
+        order: 1;
+    }
+}
+
+/* large screens */
+@media screen and (min-width:80rem) {
+    .navigation{
+        order: 1;
+        flex-basis: 20rem;
+
+        position: sticky;
+        /* at what point it becomes fixed */
+        top: 30px;
+
+
+    }
+    main{
+        order: 2;
+        flex-basis: calc(100% - 20rem - 2rem);
+
+    }
+}
