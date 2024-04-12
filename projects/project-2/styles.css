@@ -14,19 +14,23 @@ header{
     /* sets an exact property relative to  page width. You will see that flex grow overrides this to fill up missing space. */
     flex-basis: 100%;
 }
+
 main{
     flex-grow: 1; 
 }
+
 section{
     border: 1px solid blue;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
 }
+
 a{
     display: inline-block;
     text-decoration: none;
 }
+
 ol{
     flex-basis: 100%;
     list-style: none;
@@ -34,6 +38,7 @@ ol{
     margin: 0;
     padding: 0;
 }
+
 li{
     background-color: azure;
     /* transition to slower 
@@ -42,6 +47,7 @@ li{
     */
     transition: all 1s ease;
 }
+
 /* change color with hover */
 
 p:hover{
@@ -70,7 +76,6 @@ a:hover{
     padding: 2rim;
 
 }
-
 
 .example {
     display: flex;
@@ -152,5 +157,5 @@ h2{
     margin-left: auto;
     margin-right: auto;
     width: 50%;
-    style=flex-basis:100%;
+    style=flex-basis: 100%;
   }
