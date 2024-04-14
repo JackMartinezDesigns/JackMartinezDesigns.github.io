@@ -1,10 +1,78 @@
+body{
+    display: flex;
+    flex-wrap: wrap;
+    /* adds some space between sections (header and main) */
+    gap: 1rem;
+}
+
+header{
+    padding: 2rem;
+    /* means crow this box as wide as possible */
+    flex-grow: 1; 
+    /* sets an exact property relative to  page width. You will see that flex grow overrides this to fill up missing space. */
+    flex-basis: 100%;
+}
+main{
+    flex-grow: 1; 
+}
+section{
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+a{
+    display: inline-block;
+    padding: 2rem;
+
+}
+ol{
+    flex-basis: 100%;
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+/* change color with hover */
+li:hover{
+    box-shadow: 10px 10px 3px var(--pale-grey);
+    filter: blur(0);
+
+}
+
+.example {
+    display: flex;
+    padding: 1rem;
+    flex-wrap: wrap;
+
+}
+
+.list-container {
+    /* this describes the flex of this element relative to the parent flex box */
+    background-color: var(--hover-grey);
+    flex-basis: 100%;
+    list-style: none;
+    padding: 1rem;
+    margin: 1rem;
+
+    /* this describes the nested elements */
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem;
+}
+
+.list-item{
+    flex-basis: 50%;
+    box-sizing: border-box;
+    padding: 1rem;
+}
 /* variables */
 :root{
     --bg-color: rgb(146, 140, 47);
     --text-color: black;
     --primary-color: maroon;
     --secondary-color: burlywood;
-    --border-color: rgb(119, 56, 56);
+    --border-color: white;
     --light-grey: #e6e5e3;
     --hover-grey: rgb(199, 196, 180);
     --pale-grey: rgb(245, 242, 229);
@@ -55,46 +123,31 @@ body{
     background-color: var(--pale-grey);
 }
 .description {
-    display: flex;
     flex-wrap: wrap;
-    flex-basis: 100%;
-    flex-grow: 1;
-    /* box-sizing: border-box; */
+    flex-basis: 21%;
+    box-sizing: border-box;
 }
 .image-flex {
-    display: flex;
     flex-wrap: wrap;
-    flex-basis: 100%;
+    flex-basis: 77%;
     align-items: center;
     box-sizing: border-box;
 }
 
-@media screen and (min-width: 30rem) {
-    .image-flex { flex-basis: 70%; display: flex;}
-    .description { flex-basis: 20%; flex-grow: 0; display: flex;}
+@media screen and (max-width: 30rem){
+    #image-flex{flex-basis: 100%; flex-grow: 1;}
+    #description {flex-basis: 100%;}
 }
 
-header{
-    border: 1px solid red;
-    padding: 2rem;
-    /* means crow this box as wide as possible */
-    /* sets an exact property relative to  page width. You will see that flex grow overrides this to fill up missing space. */
-    flex-basis: 100%;
-}
 main{
     flex-grow: 1; 
 }
 
 @font-face {
     font-family: 'NectoMono';
-    src:  url('NectoMono-Regular.woff2') format('woff2')}
-
-h1{
-    font-family: 'NectoMono', monospace;
-    font-size: 4rem;
-    flex-basis: 100%;
-    border: 2px solid var(--border-color);    
+    src:  url('NectoMono-Regular.woff2') format('woff2'),
 }
+
 
 .title{
     padding: 2rem;
@@ -117,7 +170,6 @@ p{
     padding-bottom: 2rem;
 }
 section{
-    border: 1px solid blue;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
@@ -136,14 +188,16 @@ section{
     background-color: var(--light-grey);
     font-family: monospace;
 }
+
 .button:hover {
     background-color: var(--hover-grey);
     color: black;
 }
 
 a{
-    border: 1px solid black
     display: inline-box;
+    font-size: 2rem;
+    font-weight: 800;
 }
 
 ol{
@@ -155,19 +209,18 @@ ol{
 }
 
 li{
-    background-color: azure;
     /* transition to slower 
     transition: [property] [duration] [easing];
     transition: [all or background-color] 1s ease
     */
+    padding: rem;
     transition: all 1s ease;
 }
 
 .list-item{
-    border: 1px solid coral;
     flex-basis: 50%;
     box-sizing: border-box;
-    padding: 0;
+    padding: 1rem;
 }
 
 .center {
