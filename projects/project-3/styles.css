@@ -52,11 +52,13 @@ body{
 .description {
     flex-wrap: wrap;
     flex-basis: 20%;
+    box-sizing: border-box;
 }
 .image-flex {
     flex-wrap: wrap;
     flex-basis: 77%;
     align-items: center;
+    box-sizing: border-box;
 }
 
 @media screen and (max-width: 30rem){
