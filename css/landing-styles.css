@@ -129,7 +129,7 @@ body{
 }
 .image-flex {
     flex-wrap: wrap;
-    flex-basis: 77%;
+    flex-basis: 40%;
     align-items: center;
     box-sizing: border-box;
 }
