@@ -19,6 +19,33 @@ img {
     box-sizing:border-box;
 
 }
+/* Navigation Styling */
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+}
+  
+.topnav a {
+    float: left;
+    color: var(--light-grey);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a.active {
+    background-color:  var(--light-grey);
+    ;
+    color: black;
+}
+
+.topnav a:hover {
+    background-color: var(--hover-grey);
+    color: black;
+}
 main {
     background-color: bisque;
 }
