@@ -61,15 +61,21 @@ body{
 .image-flex {    
     flex-wrap: wrap;
     flex-basis: 100%;
-    flex-grow: 1;
+    flex-shrink: 1;
+    width: 100%;
 }
-
-@media screen and (min-width: 20rem) {
+.anchor-image-flex {    
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    width: 100%;
+}
+@media screen and (min-width: 60rem) {
     .image-flex { 
         display: felx;
         flex-wrap: wrap;
         flex-basis: 70%;
         align-items: normal;
+        width: 70%;
     }
     .description { 
         display: flex;
@@ -113,6 +119,7 @@ header{
     /* sets an exact property relative to  page width. You will see that flex grow overrides this to fill up missing space. */
     flex-basis: 100%;
 }
+
 main{
     flex-grow: 1; 
 }
@@ -141,6 +148,7 @@ h2{
 div{
     border: 2px solid var(--border-color);    
 }
+
 p{
     border: 2px solid var(--border-color);  
     font-family: 'NectoMono', monospace;
@@ -148,6 +156,7 @@ p{
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
+
 section{
     border: 1px solid blue;
     padding: 0;
@@ -168,13 +177,14 @@ section{
     background-color: var(--light-grey);
     font-family: monospace;
 }
+
 .button:hover {
     background-color: var(--hover-grey);
     color: black;
 }
 
 a{
-    border: 1px solid black
+    /* border: 1px solid black; */
     display: inline-box;
 }
 
@@ -207,5 +217,5 @@ li{
     margin-left: auto;
     margin-right: auto;
     width: 50%;
-    style=flex-basis:100%;
+    flex-basis: 100%;
   }
