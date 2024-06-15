@@ -13,4 +13,19 @@
         document.querySelector("body").classList.remove("dark");
     }
 );
+
+a = 'letter a';
+document.write(a);
+
+var car = "lambo";
+var test="hello";
+
+function returnText(){
+    let input = docuent.getElementByID("userInput").value
+};
+
+{/* let title = "-hello world-";
+document.title = title;
+console.log(document.title); */}
+
 </script>
