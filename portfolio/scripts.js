@@ -18,7 +18,9 @@ a = 'letter a';
 document.write(a);
 
 var car = "lambo";
+
 var test="hello";
+document.getElementbyID("mytext").value=test;
 
 function returnText(){
     let input = docuent.getElementByID("userInput").value

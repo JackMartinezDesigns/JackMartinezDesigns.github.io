@@ -8,7 +8,6 @@
     --light-grey: #e6e5e3;
     --hover-grey: rgb(199, 196, 180);
     --pale-grey: rgb(245, 242, 229);
-
 }
 
 /* Navigation Styling */
@@ -139,6 +138,7 @@ h1{
 
 .title{
     padding: 0rem;
+    padding-left: 2rem;
     font-family: 'NectoMono', monospace;
 }
 
