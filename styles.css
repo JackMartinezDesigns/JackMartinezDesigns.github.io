@@ -1,0 +1,224 @@
+/* variables */
+:root{
+    --bg-color: rgb(146, 140, 47);
+    --text-color: black;
+    --primary-color: maroon;
+    --secondary-color: burlywood;
+    --border-color: white;
+    --light-grey: #e6e5e3;
+    --hover-grey: rgb(199, 196, 180);
+    --pale-grey: rgb(245, 242, 229);
+}
+
+/* Navigation Styling */
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+}
+  
+.topnav a {
+    float: left;
+    color: var(--light-grey);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a.active {
+    background-color:  var(--light-grey);
+    ;
+    color: black;
+}
+
+.topnav a:hover {
+    background-color: var(--hover-grey);
+    color: black;
+}
+  
+body{
+    display: flex;
+    flex-wrap: wrap;
+    /* adds some space between sections (header and main) */
+    gap: 1rem;
+    font-family: monospace;
+    margin: 0;
+    flex-basis: 100%;
+}
+
+.body-text {
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    background-color: var(--pale-grey);
+}
+.description {    
+    flex-wrap: wrap;
+    flex-basis: 100%;
+}
+.image-flex {    
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    flex-shrink: 1;
+    width: 100%;
+}
+.anchor-image-flex {    
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    flex-shrink: 1;
+    width: 99%;
+}
+@media screen and (min-width: 60rem) {
+    .image-flex { 
+        display: felx;
+        flex-wrap: wrap;
+        flex-basis: 70%;
+        align-items: normal;
+        width: 70%;
+    }
+    .description { 
+        display: flex;
+        flex-wrap: wrap;
+        flex-basis:25%;
+        flex-grow: 1;
+    }
+}
+
+/* .description {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 20%;
+}
+.image-flex {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 70%;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 30rem) {
+    .image-flex { 
+        display: block;
+        flex-wrap: nowrap;
+        flex-basis: 100%;
+        align-items: normal;
+        box-sizing: border-box;
+    }
+    .description { 
+        display: block;
+        flex-wrap: nowrap;
+        flex-basis: 100%;
+        flex-grow: 1;
+} */
+
+header{
+    border: 1px solid red;
+    padding: 2rem;
+    /* means crow this box as wide as possible */
+    /* sets an exact property relative to  page width. You will see that flex grow overrides this to fill up missing space. */
+    flex-basis: 100%;
+}
+
+main{
+    flex-grow: 1; 
+}
+
+@font-face {
+    font-family: 'NectoMono';
+    src:  url('NectoMono-Regular.woff2') format('woff2')}
+
+h1{
+    font-family: 'NectoMono', monospace;
+    font-size: 4rem;
+    flex-basis: 100%;
+    border: 2px solid var(--border-color);    
+}
+
+.title{
+    padding: 0rem;
+    padding-left: 2rem;
+    font-family: 'NectoMono', monospace;
+}
+
+h2{
+    font-family: sans-serif;
+    flex-basis: 100%;
+    border: 2px solid var(--border-color);    
+}
+
+div{
+    border: 2px solid var(--border-color);    
+}
+
+p{
+    border: 2px solid var(--border-color);  
+    font-family: 'NectoMono', monospace;
+    padding: 1rem;  
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+section{
+    border: 1px solid blue;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.button {
+    border: none;
+    color: Black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: var(--light-grey);
+    font-family: monospace;
+}
+
+.button:hover {
+    background-color: var(--hover-grey);
+    color: black;
+}
+
+a{
+    /* border: 1px solid black; */
+    display: inline-box;
+}
+
+ol{
+    flex-basis: 100%;
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    background-color: azure;
+    /* transition to slower 
+    transition: [property] [duration] [easing];
+    transition: [all or background-color] 1s ease
+    */
+    transition: all 1s ease;
+}
+
+.list-item{
+    border: 1px solid coral;
+    flex-basis: 50%;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    flex-basis: 100%;
+  }

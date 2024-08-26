@@ -5,23 +5,23 @@
     <title id="page-1"> Gentrification Research Tools </title>
     <link rel="stylesheet" href="/portfolio/styles.css">
     <script src="/portfolio/scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="nav.js"></script>
 </head>
 <body>
     <h1 class="title"> 
         Gentrification Research Tools
     </h1>
-    <nav class="topnav" >
-        <div class="topnav">
-            <a class="active" href="/portfolio/index.html">Home</a>
-            <a href="/portfolio/page-1/index.html"> Atypic Lingerie </a>
-            <a href="/portfolio/page-2/index.html"> Grocery Redesign </a>
-            <a href="/portfolio/page-3/index.html"> Gentrification </a>
-            <a href="/portfolio/page-4/index.html"> Tap Tap</a>
-            <a href="/portfolio/page-5/index.html"> Page 5 </a>
-            <a href="/portfolio/page-6/index.html"> Page 6 </a>
-            <a href="/portfolio/page-z/index.html"> Design Sprints Portfolio </a>
-          </div>
-  </nav>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    
+    <script>
+    $(function(){
+      $("#nav-placeholder").load("nav.html");
+    });
+    </script>
+    <!--end of Navigation bar-->
     <img class="image-flex" src="/portfolio/page-4/Images for Page 4/tap-tap_gif_6.gif" alt="tapping machine">
         <p class="description"> 
         XX<br>
