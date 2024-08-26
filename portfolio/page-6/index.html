@@ -7,6 +7,7 @@
     <script src="/portfolio/scripts.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="nav.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
 </head>
 <body>
     <h1 class="title"> 
@@ -15,12 +16,11 @@
     <!--Navigation bar-->
     <div id="nav-placeholder">
     </div>
-    
     <script>
-    $(function(){
-      $("#nav-placeholder").load("nav.html");
-    });
-    </script>
+        $.get("nav.html", function(data){
+            $("#nav-placeholder").replaceWith(data);
+        });
+    </script> 
     <!--end of Navigation bar-->
     <img class="image-flex" src="/portfolio/page-4/Images for Page 4/tap-tap_gif_6.gif" alt="tapping machine">
         <p class="description"> 
