@@ -14,18 +14,21 @@
         Gentrification Research Tools
     </h1>
   <!--Navigation bar-->
-    <div id="nav-placeholder">
+    <div id="nav-placeholder1">
+
+    </div>
+    <div id="nav-placeholder2">
 
     </div>
 
     <script>
        $(function(){
-            $("#nav-placeholder").load("\nav.html");
+            $("#nav-placeholder1").load("\nav.html");
         });
     </script>
     <script>
         $.get("JackMartinezDesigns.github.io\nav.html", function(data){
-            $("#nav-placeholder").replaceWith(data);
+            $("#nav-placeholder2").replaceWith(data);
         });
         </script>
 <!--end of Navigation bar-->
