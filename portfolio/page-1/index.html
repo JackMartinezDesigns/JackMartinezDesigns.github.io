@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,37 +7,34 @@
     <link rel="stylesheet" href="/portfolio/styles.css">
     <script src="/portfolio/scripts.js"></script>
 </head>
+
 <body>
-    <h1 class="title"> 
+    <h1 class="title">
         Atypic&trade; Lingerie
     </h1>
-    <nav class="topnav" >
-        <div class="topnav">
-            <a class="active" href="/portfolio/index.html">Home</a>
-            <a href="/portfolio/page-1/index.html"> Atypic Lingerie </a>
-            <a href="/portfolio/page-2/index.html"> Grocery Redesign </a>
-            <a href="/portfolio/page-3/index.html"> Gentrification </a>
-            <a href="/portfolio/page-4/index.html"> Tap Tap </a>
-            <a href="/portfolio/page-5/index.html"> Page 5 </a>
-            <a href="/portfolio/page-6/index.html"> Page 6 </a>
-            <a href="/portfolio/page-z/index.html"> Design Sprints Portfolio </a>
-          </div>
-    </nav>
-        <img class="anchor-image-flex" src="/portfolio/page-1/Images for Page 1/Mens Lingerie Title Video.gif" alt="detailed image">
-        <div class="flex-container"> 
-            <iframe width=100% height="540" src="https://www.youtube.com/embed/W2_cZX0iG4g" title="Lingerie Industry Market Analysis Rationale" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <img class="image-flex" src="/portfolio/page-1/Images for Page 1/Market Analysis.jpg" alt="market analysis">
-    <p class="description"> 
-        There is a market need for a lingerie to serve male bodies that dont identify as either "femme" or "masc." <br><br>
-     </p>  
-        <img class="anchor-image-flex" src="/portfolio/page-1/Images for Page 1/Atypic.jpg" alt="detailed image">
+    <!--Navigation bar-->
+    <div id="navbar"></div>
+    <!--end of Navigation bar-->
+    <img class="anchor-image-flex" src="/portfolio/page-1/Images for Page 1/Mens Lingerie Title Video.gif"
+        alt="detailed image">
+    <div class="flex-container">
+        <iframe width=100% height="540" src="https://www.youtube.com/embed/W2_cZX0iG4g"
+            title="Lingerie Industry Market Analysis Rationale" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <img class="image-flex" src="/portfolio/page-1/Images for Page 1/Market Analysis.jpg" alt="market analysis">
+    <p class="description">
+        There is a market need for a lingerie to serve male bodies that dont identify as either "femme" or "masc."
+        <br><br>
+    </p>
+    <img class="anchor-image-flex" src="/portfolio/page-1/Images for Page 1/Atypic.jpg" alt="detailed image">
     <img class="image-flex" src="/portfolio/page-1/Images for Page 1/front_final.jpg" alt="detailed image">
-    <p class="description"> 
+    <p class="description">
         New lace designed to be aggressively neutral - neither femme nor masc <br><br>
-     </p>    
-     <img class="image-flex" src="/portfolio/page-1/Images for Page 1/back_final.jpg" alt="detailed image">
-     <p class="description"> 
+    </p>
+    <img class="image-flex" src="/portfolio/page-1/Images for Page 1/back_final.jpg" alt="detailed image">
+    <p class="description">
         Uses linework of elastics to highlight natural curves in men, <br><br>
         Highlights V-line <br>
         Frames Stomach <br>
@@ -44,9 +42,9 @@
         Frames Back <br>
         Fames buttocks <br>
         While still prominently featuring groin
-      </p>    
-      <img class="image-flex" src="/portfolio/page-1/Images for Page 1/side_final.jpg" alt="detailed image">
-      <p class="description"> 
+    </p>
+    <img class="image-flex" src="/portfolio/page-1/Images for Page 1/side_final.jpg" alt="detailed image">
+    <p class="description">
         User Feedback <br><br>
         “It’s a sensitive topic for me… but that’s a good idea” - he/they <br>
         “Woooooah” - he/him <br>
@@ -54,24 +52,42 @@
         “It’s hot and you threaded the masc/femme line you were avoiding.” -he/him <br>
         “So hot” - he/him <br>
 
-      </p>    
-       <img class="image-flex" src="/portfolio/page-1/Images for Page 1/butt_final.jpg" alt="detailed image">
-       <p class="description"> 
-            Jock-strap form preserves benefits fo current form and commnicates intentionality of use.
-        </p>
-        <img class="image-flex" src="/portfolio/page-1/Images for Page 1/clasp_final.JPG" alt="">
-        <p class="description"> 
-            Hook makes this easy to put on, lower knowledge to entry requirement. 
-        </p>
-         <img class="image-flex" src="/portfolio/page-1/Images for Page 1/v-line_final.jpg" alt="">
-         <p class="description"> 
-             Custom manufactured snake lace echos both masc and femme imagry to carve out a more aggressively neutral materiality.  
-          </p>
+    </p>
+    <img class="image-flex" src="/portfolio/page-1/Images for Page 1/butt_final.jpg" alt="detailed image">
+    <p class="description">
+        Jock-strap form preserves benefits fo current form and commnicates intentionality of use.
+    </p>
+    <img class="image-flex" src="/portfolio/page-1/Images for Page 1/clasp_final.JPG" alt="">
+    <p class="description">
+        Hook makes this easy to put on, lower knowledge to entry requirement.
+    </p>
+    <img class="image-flex" src="/portfolio/page-1/Images for Page 1/v-line_final.jpg" alt="">
+    <p class="description">
+        Custom manufactured snake lace echos both masc and femme imagry to carve out a more aggressively neutral
+        materiality.
+    </p>
+    <!--Navigation bar script-->
+    <script>
+        // Function to load the navigation bar
+        function loadNavbar() {
+            fetch('/navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading the navigation bar:', error));
+        }
+
+        // Load the navigation bar when the page loads
+        document.addEventListener('DOMContentLoaded', loadNavbar);
+    </script>
+    <!--end navigation bar script-->
 </body>
 
-<nav class="topnav" >
+<nav class="topnav">
     <div class="topnav">
         <a class="active" href="/index.html">Go to Root Home</a>
-      </div>
+    </div>
 </nav>
+
 </html>

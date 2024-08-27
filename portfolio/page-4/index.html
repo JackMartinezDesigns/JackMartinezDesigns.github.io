@@ -1,58 +1,78 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-1"> Gentrification Research Tools </title>
+    <title id="page-4"> Tap Tap </title>
     <link rel="stylesheet" href="/portfolio/styles.css">
     <script src="/portfolio/scripts.js"></script>
 </head>
+
 <body>
-    <h1 class="title"> 
-        Gentrification Research Tools
+    <h1 class="title">
+        Tap Tap
     </h1>
-    <nav class="topnav" >
-        <div class="topnav">
-            <a class="active" href="/portfolio/index.html">Home</a>
-            <a href="/portfolio/page-1/index.html"> Atypic Lingerie </a>
-            <a href="/portfolio/page-2/index.html"> Grocery Redesign </a>
-            <a href="/portfolio/page-3/index.html"> Gentrification </a>
-            <a href="/portfolio/page-4/index.html"> Tap Tap</a>
-            <a href="/portfolio/page-5/index.html"> Page 5 </a>
-            <a href="/portfolio/page-6/index.html"> Page 6 </a>
-            <a href="/portfolio/page-z/index.html"> Design Sprints Portfolio </a>
-          </div>
-  </nav>
+    <!--Navigation bar-->
+    <div id="navbar"></div>
+    <!--end of Navigation bar-->
     <img class="image-flex" src="/portfolio/page-4/Images for Page 4/tap-tap_gif_6.gif" alt="tapping machine">
-        <p class="description"> 
+    <p class="description">
         XX<br>
-     </p>    
+    </p>
 
-        <img class="image-flex" src="/portfolio/page-4/Images for Page 4/DSCF3984.JPG" alt="detailed image">     
-           <p class="description">   This semester I took an interest in social issues. Based on the weak signals of increasing attention to empathy, I interrogated the theme of Empathy. 
-            <br>
-            ​Early mapping and interrogation revealed a few dichotomies, between Empathy and Self-Interest, and Domestic and Emotional Labor. 
+    <img class="image-flex" src="/portfolio/page-4/Images for Page 4/DSCF3984.JPG" alt="detailed image">
+    <p class="description"> This semester I took an interest in social issues. Based on the weak signals of increasing
+        attention to empathy, I interrogated the theme of Empathy.
+        <br>
+        ​Early mapping and interrogation revealed a few dichotomies, between Empathy and Self-Interest, and Domestic and
+        Emotional Labor.
 
-        </p>
+    </p>
 
 
-        XX <br><br>
-        <img class="image-flex" src="/portfolio/page-4/Images for Page 4/IMG_2330.JPG" alt="detailed image">
-        <p class="description"> 
-        <p> "Choose Grace" is a speculative futures video intended to draw on the tension between empathy and self-interest. It deals with concepts of domestic labor, matriarchal roles in the home, and the demands of an equitable relationship. I know it is provocative, but please tear it to shreds in the comments, the goal is to start the conversation about these themes.
-        </p>
-        <iframe width="893" height="532" src="https://www.youtube.com/embed/2zhCbQlkJqQ" title="Choose Grace" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <p>A materials exploration revealed a way to demonstrate this issue. The tap-tap-tapping in class helps the tappers focus, but distracts everyone else, prioritizing self interest over empathy. The artifacts are made out of a resin-cast impressions of pencil tapping display compromising roughly-fit solutions to these social issues. </p>
-        <img class="anchor-image-flex" src="/portfolio/page-4/Images for Page 4/54a1b3dc-8cb6-482f-adf4-54bf411c5eb5.jpg"detailed image">
-        <p class="description">   XX  </p>
-        <img class="image-flex" src="/portfolio/page-4/Images for Page 4/DSCF3988.JPG" alt="detailed image">
-        <p class="description"> 
-     </p>    
-     
+    XX <br><br>
+    <img class="image-flex" src="/portfolio/page-4/Images for Page 4/IMG_2330.JPG" alt="detailed image">
+    <p class="description">
+    <p> "Choose Grace" is a speculative futures video intended to draw on the tension between empathy and self-interest.
+        It deals with concepts of domestic labor, matriarchal roles in the home, and the demands of an equitable
+        relationship. I know it is provocative, but please tear it to shreds in the comments, the goal is to start the
+        conversation about these themes.
+    </p>
+    <iframe width="893" height="532" src="https://www.youtube.com/embed/2zhCbQlkJqQ" title="Choose Grace"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p>A materials exploration revealed a way to demonstrate this issue. The tap-tap-tapping in class helps the tappers
+        focus, but distracts everyone else, prioritizing self interest over empathy. The artifacts are made out of a
+        resin-cast impressions of pencil tapping display compromising roughly-fit solutions to these social issues. </p>
+    <img class="anchor-image-flex" src="/portfolio/page-4/Images for Page 4/54a1b3dc-8cb6-482f-adf4-54bf411c5eb5.jpg"
+        detailed image">
+    <p class="description"> XX </p>
+    <img class="image-flex" src="/portfolio/page-4/Images for Page 4/DSCF3988.JPG" alt="detailed image">
+    <p class="description">
+    </p>
+    <!--Navigation bar script-->
+    <script>
+        // Function to load the navigation bar
+        function loadNavbar() {
+            fetch('/navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading the navigation bar:', error));
+        }
+
+        // Load the navigation bar when the page loads
+        document.addEventListener('DOMContentLoaded', loadNavbar);
+    </script>
+    <!--end navigation bar script-->
 </body>
 
-<nav class="topnav" >
+<nav class="topnav">
     <div class="topnav">
         <a class="active" href="/index.html">Go to Root Home</a>
-      </div>
+    </div>
 </nav>
+
 </html>
