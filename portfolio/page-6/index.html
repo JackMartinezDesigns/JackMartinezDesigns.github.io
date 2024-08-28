@@ -59,20 +59,7 @@
     <script src="nav.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!--Navigation bar script-->
-    <script>
-        // Function to load the navigation bar
-        function loadNavbar() {
-            fetch('/navbar.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('navbar').innerHTML = data;
-                })
-                .catch(error => console.error('Error loading the navigation bar:', error));
-        }
-
-        // Load the navigation bar when the page loads
-        document.addEventListener('DOMContentLoaded', loadNavbar);
-    </script>
+    <script src="/portfolio/navbar.js"></script>
     <!--end navigation bar script-->
 
 </body>

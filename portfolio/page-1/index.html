@@ -66,22 +66,7 @@
         Custom manufactured snake lace echos both masc and femme imagry to carve out a more aggressively neutral
         materiality.
     </p>
-    <!--Navigation bar script-->
-    <script>
-        // Function to load the navigation bar
-        function loadNavbar() {
-            fetch('/navbar.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('navbar').innerHTML = data;
-                })
-                .catch(error => console.error('Error loading the navigation bar:', error));
-        }
-
-        // Load the navigation bar when the page loads
-        document.addEventListener('DOMContentLoaded', loadNavbar);
-    </script>
-    <!--end navigation bar script-->
+    <script src="/portfolio/navbar.js"></script>
 </body>
 
 <nav class="topnav">

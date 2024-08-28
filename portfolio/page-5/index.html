@@ -57,22 +57,8 @@
     <p class="description">
         XX<br>
     </p>
-    <!--Navigation bar script-->
-    <script>
-        // Function to load the navigation bar
-        function loadNavbar() {
-            fetch('/navbar.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('navbar').innerHTML = data;
-                })
-                .catch(error => console.error('Error loading the navigation bar:', error));
-        }
+    <script src="/portfolio/navbar.js"></script>
 
-        // Load the navigation bar when the page loads
-        document.addEventListener('DOMContentLoaded', loadNavbar);
-    </script>
-    <!--end navigation bar script-->
 </body>
 
 <nav class="topnav">
