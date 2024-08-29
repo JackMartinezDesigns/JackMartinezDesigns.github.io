@@ -62,33 +62,10 @@ body {
     }
 }
 
-/* .description {
+.flex-container {
     display: flex;
-    flex-wrap: wrap;
-    flex-basis: 20%;
+    align-items: stretch;
 }
-.image-flex {
-    display: flex;
-    flex-wrap: wrap;
-    flex-basis: 70%;
-    align-items: center;
-    box-sizing: border-box;
-}
-
-@media screen and (max-width: 30rem) {
-    .image-flex { 
-        display: block;
-        flex-wrap: nowrap;
-        flex-basis: 100%;
-        align-items: normal;
-        box-sizing: border-box;
-    }
-    .description { 
-        display: block;
-        flex-wrap: nowrap;
-        flex-basis: 100%;
-        flex-grow: 1;
-} */
 
 header {
     border: 1px solid red;
