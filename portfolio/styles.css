@@ -75,20 +75,26 @@ body {
 
 @media screen and (min-width: 60rem) {
     .image-flex {
-        display: felx;
+        display: flex;
+        /* Corrected typo from felx to flex */
         flex-wrap: wrap;
         flex-basis: 70%;
         align-items: normal;
         width: 70%;
     }
 
-    .description {
+    .description-container {
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
         flex-basis: 25%;
         flex-grow: 1;
     }
+
+    .description {
+        margin-bottom: 20px;
+    }
 }
+
 
 /* .description {
     display: flex;
@@ -167,27 +173,36 @@ p {
 }
 
 section {
-    border: 1px solid blue;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
 }
 
 .button {
-    border: none;
     color: Black;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    background-color: var(--light-grey);
     font-family: monospace;
+    font-size: 16px;
+    text-align: center;
+    display: block;
+    border: none;
+    margin: 2px 2px;
+    padding: 15px 32px;
+    background-color: var(--light-grey);
+    text-decoration: none;
 }
 
-.button:hover {
+.button-link {
+    display: inline-block;
+    /* Ensures the link behaves like a block element */
+    margin-top: 20px;
+    /* Adds space above the button */
+    text-align: center;
+    /* Center the text inside the block */
+    text-decoration: none;
+    /* Remove underline from the link */
+}
+
+*/ .button:hover {
     background-color: var(--hover-grey);
     color: black;
 }
