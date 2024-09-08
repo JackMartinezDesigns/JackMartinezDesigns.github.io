@@ -73,7 +73,7 @@ body {
     width: 99%;
 }
 
-@media screen and (min-width: 60rem) {
+@media screen and (min-width: 80rem) {
     .image-flex {
         display: flex;
         /* Corrected typo from felx to flex */
