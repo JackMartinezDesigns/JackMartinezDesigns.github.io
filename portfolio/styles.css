@@ -194,8 +194,8 @@ section {
 .button-link {
     display: inline-block;
     /* Ensures the link behaves like a block element */
-    margin-top: 20px;
-    /* Adds space above the button */
+    margin-bottom: 2rem;
+    /* Adds space below the button */
     text-align: center;
     /* Center the text inside the block */
     text-decoration: none;
