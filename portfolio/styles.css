@@ -10,6 +10,34 @@
     --pale-grey: rgb(245, 242, 229);
 }
 
+/* Navigation Styling */
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+}
+
+.topnav a {
+    float: left;
+    color: var(--light-grey);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a.active {
+    background-color: var(--light-grey);
+    ;
+    color: black;
+}
+
+.topnav a:hover {
+    background-color: var(--hover-grey);
+    color: black;
+}
+
 body {
     display: flex;
     flex-wrap: wrap;
@@ -26,10 +54,10 @@ body {
     background-color: var(--pale-grey);
 }
 
-.description {
+/* .description {
     flex-wrap: wrap;
     flex-basis: 100%;
-}
+} */
 
 .image-flex {
     flex-wrap: wrap;
@@ -62,10 +90,33 @@ body {
     }
 }
 
-.flex-container {
+/* .description {
     display: flex;
-    align-items: stretch;
+    flex-wrap: wrap;
+    flex-basis: 20%;
 }
+.image-flex {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 70%;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 30rem) {
+    .image-flex { 
+        display: block;
+        flex-wrap: nowrap;
+        flex-basis: 100%;
+        align-items: normal;
+        box-sizing: border-box;
+    }
+    .description { 
+        display: block;
+        flex-wrap: nowrap;
+        flex-basis: 100%;
+        flex-grow: 1;
+} */
 
 header {
     border: 1px solid red;
@@ -177,35 +228,3 @@ li {
     width: 50%;
     flex-basis: 100%;
 }
-
-/* Navigation Styling */
-.topnav {
-    overflow: hidden;
-    background-color: #333;
-    flex-wrap: wrap;
-    flex-basis: 100%;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-}
-
-.topnav a {
-    float: left;
-    color: var(--light-grey);
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-}
-
-.topnav .active {
-    background-color: var(--light-grey);
-    color: black;
-}
-
-.topnav a:hover {
-    background-color: var(--hover-grey);
-    color: black;
-}
-
-/* End basic styles for the navigation bar */
