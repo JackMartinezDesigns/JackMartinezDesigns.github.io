@@ -1,9 +1,10 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="page-z"> Design Sprints </title>
+  <title id="page-z">Design Sprints</title>
   <link rel="stylesheet" href="/portfolio/styles.css">
   <script src="/portfolio/scripts.js"></script>
   <style>
@@ -13,150 +14,166 @@
 
     body {
       font-family: Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
     }
 
-    .mySlides {
-      display: none;
-    }
-
-    img {
-      vertical-align: middle;
-    }
-
-    /* Slideshow container */
-    .slideshow-container {
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
       max-width: 1000px;
+      margin: 20px auto;
+      padding: 0 16px;
+    }
+
+    .image-wrapper {
       position: relative;
-      margin: auto;
+      overflow: hidden;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      /* allow it to grow to fill the grid cell */
+      min-height: 250px;
+      /* adjust as needed for your layout */
     }
 
-    /* Caption text */
-    .text {
-      color: #f2f2f2;
-      font-size: 15px;
-      padding: 8px 12px;
+    .image-wrapper img {
+      max-height: 100%;
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .image-wrapper:hover img {
+      transform: scale(1.03);
+    }
+
+    .overlay {
       position: absolute;
-      bottom: 8px;
-      width: 100%;
-      text-align: center;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 10px;
+      font-size: 14px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
     }
 
-    /* The dots/bullets/indicators */
-    .dot {
-      height: 10px;
-      width: 10px;
-      margin: 0 2px;
-      background-color: #bbb;
-      border-radius: 50%;
-      display: inline-block;
-      transition: background-color 0.6s ease;
-    }
-
-    .active {
-      background-color: #717171;
-    }
-
-    /* Fading animation */
-    .fade {
-      animation-duration: 2s;
-    }
-
-    @keyframes fade {
-      from {
-        opacity: .4
-      }
-
-      to {
-        opacity: 1
-      }
-    }
-
-    /* On smaller screens, decrease text size */
-    @media only screen and (max-width: 300px) {
-      .text {
-        font-size: 11px
-      }
+    .image-wrapper:hover .overlay {
+      opacity: 1;
     }
   </style>
 </head>
 
 <body>
-  <h1 class="title">
-    Design Sprints
-  </h1>
-  <!--Navigation bar-->
+  <h1 class="title">Design Sprints</h1>
+
+  <!-- Navigation bar -->
   <div id="navbar"></div>
-  <!--end of Navigation bar-->
-  <div class="slideshow-container">
 
-    <div class="mySlides fade">
-      <img src="./Images for Page Z/IMG_0571.JPEG" style="width:100%">
-      <div class="text"></div>
+  <!-- Image Grid -->
+  <div class="image-grid">
+    <div class="image-wrapper flip-image" data-src1="./Images for Page Z/Jack_Martinez-Pit_Fired_Vase-11x9x5_1.jpg"
+      data-src2="./Images for Page Z/Jack_Martinez-Pit_Fired_Vase-11x9x5_2.jpg">
+      <img src="./Images for Page Z/Jack_Martinez-Pit_Fired_Vase-11x9x5_2.jpg"
+        alt="Pit-Fired Ceramic Vase, Made from terracotta and copper salt.">
+      <div class="overlay">Pit-Fired Ceramic Vase, Made from terracotta and copper salt.
+      </div>
     </div>
-
-    <div class="mySlides fade">
-      <img src="./Images for Page Z/IMG_1132.JPG" style="width:100%">
-      <div class="text"></div>
+    <div class="image-wrapper">
+      <img src="./Images for Page Z/IMG_1132.JPG"
+        alt="Wearing my custom apron while repairing machines in the Soft Goods Room at RISD.">
+      <div class="overlay">Wearing my custom apron while repairing machines in the Soft Goods Room at RISD.</div>
     </div>
-
-    <div class="mySlides fade">
-      <img src="./Images for Page Z/IMG_2030.jpeg" style="width:100%">
-      <div class="text"></div>
+    <div class="image-wrapper">
+      <img src="./Images for Page Z/IMG_2030.jpeg"
+        alt="Impractical Saddle Bag made from light pastel canvas and faux fur. Comically designed for sunny, dry rides only!">
+      <div class="overlay">The Impractical Saddle Bag made from light pastel canvas and faux fur. Comically designed for
+        sunny, dry rides only!</div>
     </div>
-
-    <div class="mySlides fade">
-      <img src="./Images for Page Z/IMG_1393.jpg" style="width:100%">
-      <div class="text"></div>
+    <div class="image-wrapper">
+      <img src="./Images for Page Z/IMG_1393.jpg"
+        alt="An anti-design project, creating 7 bad nail clippers to dramaticise the isues I have with common designs availible on the market.">
+      <div class="overlay">An anti-design project, creating 7 bad nail clippers to dramatizes the issues I have with
+        common designs available on the market.</div>
     </div>
-
-    <div class="mySlides fade">
-      <img src="./Images for Page Z/IMG_2883.JPEG" style="width:100%">
-      <div class="text"></div>
+    <div class="image-wrapper">
+      <img src="./Images for Page Z/IMG_2883.JPEG" alt="Turned poplar bowl.">
+      <div class="overlay">Turned poplar bowl.</div>
     </div>
-
-    <div class="mySlides fade">
-      <img src="./Images for Page Z/IMG_2030.jpeg" style="width:100%">
-      <div class="text"></div>
+    <div class="image-wrapper flip-image" data-src1="./Images for Page Z/IMG_2885.jpeg"
+      data-src2="./Images for Page Z/IMG_2855.jpeg">
+      <img src="./Images for Page Z/IMG_2885.jpeg" alt="Side chest with tambour door and steam-bent oak legs.">
+      <div class="overlay">Side chest with tambour door and steam-bent oak legs.</div>
+    </div>
+    <div class="image-wrapper flip-image" data-src1="./Images for Page Z/IMG_2310.jpeg"
+      data-src2="./Images for Page Z/IMG_2318.jpeg">
+      <img src="./Images for Page Z/IMG_2310.jpeg" alt="Cycling t-shirts featuring local screenprinted designs.">
+      <div class="overlay">Cycling t-shirts featuring local screenprinted designs.</div>
+    </div>
+    <div class="image-wrapper flip-image" data-src1="./Images for Page Z/mid-way quilt.jpg"
+      data-src2="./Images for Page Z/unfinished quilt.jpg">
+      <img src="./Images for Page Z/unfinished quilt.jpg"
+        alt="Quilt made from remnant domestic, organic, and naturally dyed cotton, used to describe systems maps.">
+      <div class="overlay">Quilt made from remnant domestic, organic, and naturally dyed cotton, used to describe
+        systems maps.</div>
+    </div>
+    <div class="image-wrapper">
+      <img src="./Images for Page Z/crystals pot 2.jpg" alt="Experimental vase with crystalline glaze inclusions.">
+      <div class="overlay">Experimental vase with crystalline glaze inclusions.</div>
+    </div>
+    <div class="image-wrapper flip-image" data-src1="./Images for Page Z/hugging stitchworm.png"
+      data-src2="./Images for Page Z/img_1826.jpeg">
+      <img src="./Images for Page Z/Stitchworm Lore_Page_10.jpg"
+        alt="Stitchworms designed to protect and care for the finnicky sewing machines in the soft goods department.">
+      <div class=" overlay">Stitchworms designed to protect and care for the finnicky sewing machines in the soft
+        goods department.
+      </div>
+    </div>
+    <div class="image-wrapper flip-image" data-src1="./Images for Page Z/img_1804.jpeg"
+      data-src2="./Images for Page Z/img_4713.jpeg">
+      <img src="./Images for Page Z/img_4713.jpeg"
+        alt="Spice Pods - Edible pods of spices to get a jump start on traditional cooking bases.">
+      <div class=" overlay">Spice Pods - Edible pods of spices to get a jump start on traditional cooking bases.
+      </div>
     </div>
 
   </div>
-  <br>
 
-  <div style="text-align:center">
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-  </div>
-
-  <script>
-    let slideIndex = 0;
-    showSlides();
-
-    function showSlides() {
-      let i;
-      let slides = document.getElementsByClassName("mySlides");
-      let dots = document.getElementsByClassName("dot");
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) { slideIndex = 1 }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex - 1].style.display = "block";
-      dots[slideIndex - 1].className += " active";
-      setTimeout(showSlides, 2000); // Change image every 2 seconds
-    }
-  </script>
   <script src="/portfolio/navbar.js"></script>
+  <script>
+    // Flip through pairs of images in elements marked with .flip-image
+    document.addEventListener("DOMContentLoaded", function () {
+      const flipElements = document.querySelectorAll(".flip-image");
 
+      flipElements.forEach(wrapper => {
+        const img = wrapper.querySelector("img");
+        const src1 = wrapper.dataset.src1;
+        const src2 = wrapper.dataset.src2;
+        let showingFirst = true;
+
+        setInterval(() => {
+          img.src = showingFirst ? src2 : src1;
+          showingFirst = !showingFirst;
+        }, 4000); // flip every 2 seconds
+      });
+    });
+  </script>
+  <nav class="topnav">
+    <div class="topnav">
+      <a class="active" href="/index.html">Go to Root Home</a>
+    </div>
+  </nav>
 </body>
-
-<nav class="topnav">
-  <div class="topnav">
-    <a class="active" href="/index.html">Go to Root Home</a>
-  </div>
-</nav>
 
 </html>
