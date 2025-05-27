@@ -1,41 +1,46 @@
-body{
+body {
     display: flex;
     flex-wrap: wrap;
     /* adds some space between sections (header and main) */
     gap: 1rem;
 }
 
-header{
+header {
     border: 1px solid red;
     padding: 2rem;
     /* means crow this box as wide as possible */
-    flex-grow: 1; 
+    flex-grow: 1;
     /* sets an exact property relative to  page width. You will see that flex grow overrides this to fill up missing space. */
     flex-basis: 100%;
 }
-main{
-    flex-grow: 1; 
+
+main {
+    flex-grow: 1;
 }
-section{
+
+section {
     border: 1px solid blue;
     padding: 2rem;
     display: flex;
     flex-wrap: wrap;
 }
-a{
+
+a {
     border: 1px solid black;
     display: inline-block;
     padding: 2rem;
 
 }
-ol{
+
+ol {
     flex-basis: 100%;
     list-style: none;
     display: flex;
     margin: 0;
     padding: 0;
 }
-li{
+
+li {
     background-color: azure;
     /* transition to slower 
     transition: [peoperty] [duration] [easing];
@@ -43,8 +48,9 @@ li{
     */
     transition: all 1s ease;
 }
+
 /* change color with hover */
-li:hover{
+li:hover {
     /* background-color: blueviolet; */
     /* see css gradient generator
     not animatable: 
@@ -56,7 +62,8 @@ li:hover{
     filter: blur(0);
 
 }
-h2{
+
+h2 {
     flex-basis: 100%;
     list-style: 2;
 }
@@ -70,14 +77,15 @@ h2{
 }
 
 /* how to setup an animation, trackin is the call name */
-@keyframes tracking{
-    0%{
+@keyframes tracking {
+    0% {
         letter-spacing: 0;
-        color:  red;
+        color: red;
         background-color: azure;
         size: 222pt;
     }
-    100%{
+
+    100% {
         letter-spacing: 10px;
         color: blue;
         background-color: lightpink;
@@ -85,7 +93,7 @@ h2{
 }
 
 /* applying animation */
-h1{
+h1 {
     animation: tracking 2s ease infinite alternate;
 }
 
@@ -93,6 +101,7 @@ h1{
     flex-basis: 100%;
     background-color: aliceblue;
 }
+
 .list-container {
     /* this describes the flex of this element relative to the parent flex box */
     background-color: pink;
@@ -107,9 +116,61 @@ h1{
     gap: rem;
 }
 
-.list-item{
+.list-item {
     border: 1px solid coral;
     flex-basis: 50%;
     box-sizing: border-box;
     padding: 1rem;
+}
+
+.interactive-gallery {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 16px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 8px;
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+}
+
+.gallery-item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.gallery-grid:hover .gallery-item {
+    opacity: 0.3;
+    transform: scale(0.95);
+    z-index: 1;
+}
+
+.gallery-item:hover {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    z-index: 10;
+    opacity: 1 !important;
+    transform: scale(1);
+}
+
+.gallery-item:hover img {
+    object-fit: contain;
+    background: #fff;
 }
