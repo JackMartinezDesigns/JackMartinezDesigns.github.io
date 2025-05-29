@@ -10,6 +10,13 @@
     --pale-grey: rgb(245, 242, 229);
 }
 
+/* Light Mode Defaults */
+body.light {
+    background-color: #f7f2e9;
+    color: black;
+    --border-color: #f7f2e9;
+}
+
 /* Navigation Styling */
 .topnav {
     overflow: hidden;
@@ -29,7 +36,6 @@
 
 .topnav a.active {
     background-color: var(--light-grey);
-    ;
     color: black;
 }
 
@@ -38,34 +44,21 @@
     color: black;
 }
 
+/* Layout Basics */
 body {
     display: flex;
     flex-wrap: wrap;
-    /* adds some space between sections (header and main) */
     gap: 1rem;
     font-family: monospace;
     margin: 0;
     flex-basis: 100%;
 }
 
-body.light {
-    background-color: #fdf6e3;
-    /* light tan / cream */
-    color: black;
-    --border-color: #fdf6e3;
-}
-
-
 .body-text {
     flex-wrap: wrap;
     flex-basis: 100%;
     background-color: var(--pale-grey);
 }
-
-/* .description {
-    flex-wrap: wrap;
-    flex-basis: 100%;
-} */
 
 .image-flex {
     flex-wrap: wrap;
@@ -81,10 +74,40 @@ body.light {
     width: 99%;
 }
 
+.image-pair {
+    display: flex;
+    align-items: stretch;
+    gap: 1rem;
+    width: auto;
+    max-width: 100%;
+    margin: 2rem auto;
+    justify-content: center;
+}
+
+.image-pair img {
+    height: auto;
+    max-height: 500px;
+    width: auto;
+    max-width: 100%;
+    display: block;
+    border-radius: 8px;
+}
+
+@media screen and (max-width: 600px) {
+    .image-pair {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .image-pair img {
+        width: 100%;
+        height: auto;
+    }
+}
+
 @media screen and (min-width: 80rem) {
     .image-flex {
         display: flex;
-        /* Corrected typo from felx to flex */
         flex-wrap: wrap;
         flex-basis: 70%;
         align-items: normal;
@@ -103,40 +126,9 @@ body.light {
     }
 }
 
-
-/* .description {
-    display: flex;
-    flex-wrap: wrap;
-    flex-basis: 20%;
-}
-.image-flex {
-    display: flex;
-    flex-wrap: wrap;
-    flex-basis: 70%;
-    align-items: center;
-    box-sizing: border-box;
-}
-
-@media screen and (max-width: 30rem) {
-    .image-flex { 
-        display: block;
-        flex-wrap: nowrap;
-        flex-basis: 100%;
-        align-items: normal;
-        box-sizing: border-box;
-    }
-    .description { 
-        display: block;
-        flex-wrap: nowrap;
-        flex-basis: 100%;
-        flex-grow: 1;
-} */
-
 header {
     border: 1px solid red;
     padding: 2rem;
-    /* means crow this box as wide as possible */
-    /* sets an exact property relative to  page width. You will see that flex grow overrides this to fill up missing space. */
     flex-basis: 100%;
 }
 
@@ -146,7 +138,7 @@ main {
 
 @font-face {
     font-family: 'NectoMono';
-    src: url('NectoMono-Regular.woff2') format('woff2')
+    src: url('NectoMono-Regular.woff2') format('woff2');
 }
 
 h1 {
@@ -165,7 +157,8 @@ h1 {
 h2 {
     font-family: sans-serif;
     flex-basis: 100%;
-    border: 2px solid var(--border-color);
+    padding: 0;
+    padding-left: 1rem;
 }
 
 div {
@@ -175,9 +168,7 @@ div {
 p {
     border: 2px solid var(--border-color);
     font-family: 'NectoMono', monospace;
-    padding: 1rem;
-    padding-top: 1rem;
-    padding-bottom: 2rem;
+    padding: 1rem 1rem 0rem 1rem;
 }
 
 section {
@@ -187,7 +178,7 @@ section {
 }
 
 .button {
-    color: Black;
+    color: black;
     font-family: monospace;
     font-size: 16px;
     text-align: center;
@@ -199,24 +190,12 @@ section {
     text-decoration: none;
 }
 
-.button-link {
-    display: inline-block;
-    /* Ensures the link behaves like a block element */
-    margin-bottom: 2rem;
-    /* Adds space below the button */
-    text-align: center;
-    /* Center the text inside the block */
-    text-decoration: none;
-    /* Remove underline from the link */
-}
-
-*/ .button:hover {
+.button:hover {
     background-color: var(--hover-grey);
     color: black;
 }
 
 a {
-    /* border: 1px solid black; */
     display: inline-box;
 }
 
@@ -230,10 +209,6 @@ ol {
 
 li {
     background-color: azure;
-    /* transition to slower 
-    transition: [property] [duration] [easing];
-    transition: [all or background-color] 1s ease
-    */
     transition: all 1s ease;
 }
 
@@ -252,6 +227,7 @@ li {
     flex-basis: 100%;
 }
 
+/* Interactive Gallery */
 .interactive-gallery {
     position: relative;
     max-width: 1000px;
@@ -266,60 +242,110 @@ li {
 }
 
 .gallery-item {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 4 / 5.35;
-    /* defines the height of each grid cell */
     display: flex;
     justify-content: center;
+    /* center horizontally */
     align-items: center;
-    /* ✅ vertical centering */
+    /* center vertically */
     overflow: hidden;
+    position: relative;
+    aspect-ratio: 4 / 5.35;
+    /* or whatever you're using */
+    border-radius: 5px;
 }
 
 .gallery-item img {
     width: 100%;
-    /* ✅ full width */
     height: auto;
-    /* auto height to preserve aspect ratio */
     object-fit: contain;
-    /* ensures no cropping */
     display: block;
-    transition: transform 0.2s ease;
-    border-radius: 4px;
+    border-radius: 5px;
 }
 
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Overlay Styling */
 .gallery-overlay {
     position: fixed;
-    /* ← changed from absolute */
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
-    /* full height of viewport */
-    pointer-events: none;
-    z-index: 9999;
+    z-index: 999;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 0.3s ease, opacity 0.3s ease;
     transform: translateY(-100%);
     opacity: 0;
-    overflow: hidden;
-    background: transparent;
-    /* optional: or rgba(255,255,255,0.95) for fade */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    flex-direction: column;
+    pointer-events: none;
 }
 
-
+.gallery-overlay.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
 
 .gallery-overlay img {
     max-width: 90%;
-    max-height: 90vh;
-    /* ✅ keeps it from pushing past viewport height */
-    height: auto;
+    max-height: 80vh;
     object-fit: contain;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     border-radius: 6px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+#overlay-caption {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-family: 'NectoMono', monospace;
+    color: black;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    border: none;
+    background-color: none;
+}
+
+.overlay-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(255, 245, 232);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+#overlay-img {
+    max-width: 90vw;
+    max-height: 70vh;
+    object-fit: contain;
+}
+
+/* Image Switcher */
+.image-switcher {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 700px;
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    border: 3px solid var(--hover-grey);
+    border-radius: 12px;
+}
+
+.image-switcher img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
 }
 
 html {

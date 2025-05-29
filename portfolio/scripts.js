@@ -1,4 +1,4 @@
-// Dark/Light Mode Toggle
+// === Dark/Light Mode Toggle ===
 const darkModeButton = document.querySelector("#dark-mode");
 const lightModeButton = document.querySelector("#light-mode");
 
@@ -14,38 +14,45 @@ lightModeButton?.addEventListener("click", function () {
     console.log("Light mode activated");
 });
 
-// Test Variables (for dev/testing)
-let a = "letter a";
-// document.write(a); // Not recommended
-let car = "lambo";
-
-// Set text in an input field if it exists
-let test = "hello";
+// === Set test value in input (if present) ===
 const mytext = document.getElementById("mytext");
 if (mytext) {
-    mytext.value = test;
+    mytext.value = "hello";
 }
 
-// Return input value from a field if it exists
-function returnText() {
-    let input = document.getElementById("userInput")?.value;
+// === Return input value from field (if needed elsewhere) ===
+window.returnText = function () {
+    const input = document.getElementById("userInput")?.value;
     return input;
-}
+};
 
-// Gallery Hover Overlay Script
+// === Image Switcher ===
+document.querySelectorAll(".image-switcher").forEach((switcher) => {
+    const imageElement = switcher.querySelector("img");
+    const imageList = switcher.dataset.images.split(",");
+    let index = 0;
+
+    switcher.addEventListener("click", () => {
+        index = (index + 1) % imageList.length;
+        imageElement.src = imageList[index];
+    });
+});
+
+// === Gallery Hover Overlay with Caption ===
 const overlay = document.getElementById("overlay");
 const overlayImg = document.getElementById("overlay-img");
+const overlayCaption = document.getElementById("overlay-caption");
 const galleryItems = document.querySelectorAll(".gallery-item img");
 
 galleryItems.forEach((img) => {
     img.addEventListener("mouseenter", () => {
         overlayImg.src = img.src;
-        overlay.style.transform = "translateY(0)";
-        overlay.style.opacity = "1";
+        overlayImg.alt = img.alt;
+        overlayCaption.textContent = img.alt;
+        overlay.classList.add("active");
     });
 
     img.addEventListener("mouseleave", () => {
-        overlay.style.transform = "translateY(-100%)";
-        overlay.style.opacity = "0";
+        overlay.classList.remove("active");
     });
 });
