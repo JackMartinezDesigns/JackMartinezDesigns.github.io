@@ -44,6 +44,52 @@ body.light {
     color: black;
 }
 
+/*footer stying*/
+.footernav {
+    width: 100%;
+    background-color: #333;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+    box-sizing: border-box;
+}
+
+.footernav-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.footer-left,
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-left a {
+    color: var(--light-grey);
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    padding: 4px 0;
+}
+
+.footer-left a:hover {
+    background-color: var(--hover-grey);
+    color: black;
+}
+
+.footer-text {
+    color: var(--light-grey);
+    font-size: 14px;
+    text-align: right;
+    line-height: 1.5;
+}
+
+
 /* Layout Basics */
 body {
     display: flex;
@@ -198,18 +244,18 @@ h1 {
 }
 
 h2 {
-    font-family: sans-serif;
+    font-family: 'NectoMono', monospace;
+    font-size: 2rem;
     flex-basis: 100%;
     padding: 0;
     padding-left: 1rem;
 }
 
 div {
-    border: 2px solid var(--border-color);
+    border-color: none;
 }
 
 p {
-    border: 2px solid var(--border-color);
     font-family: 'NectoMono', monospace;
     padding: 1rem 1rem 0rem 1rem;
 }
@@ -250,9 +296,15 @@ ol {
     padding: 0;
 }
 
+/* List element from game?  
 li {
     background-color: azure;
     transition: all 1s ease;
+}
+     */
+
+li {
+    font-size: large;
 }
 
 .list-item {
