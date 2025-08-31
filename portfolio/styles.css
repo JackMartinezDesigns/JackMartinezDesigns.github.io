@@ -239,7 +239,9 @@ h1 {
 
 .title {
     padding: 0rem;
-    padding-left: 2rem;
+    padding-top: 1rem;
+    margin: 0rem;
+    padding-left: 1rem;
     font-family: 'NectoMono', monospace;
 }
 
