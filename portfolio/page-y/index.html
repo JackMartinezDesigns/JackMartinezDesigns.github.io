@@ -3,20 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-3"> White Label & Freelance </title>
+    <title id="page-3"> Wild Persimmon Studio </title>
     <link rel="stylesheet" href="/portfolio/styles.css">
     <script src="/portfolio/scripts.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("https://ipapi.co/json/")
+                .then(response => response.json())
+                .then(data => {
+                    if (data.country_code !== "US") {
+                        // Not in the US
+                        document.body.innerHTML = `
+              <h1>Access Restricted</h1>
+              <p>Sorry, this page is only available in the United States.</p>
+            `;
+                    }
+                })
+                .catch(error => {
+                    console.error("Geolocation API failed:", error);
+                });
+        });
+    </script>
 </head>
 
-<body class="light">
-    <h1 class=" title">
-        White Label & Freelance
+<body class="wildPersimmon">
+    <h1 style="color:rgb(261, 65, 111)" class=" title">
+        Wild Persimmon Studio LLC
     </h1>
 
     <div id="navbar"></div>
 
 
-    <h1>White Label Services</h1>
+    <h1 padding="0rem">White Label Services</h1>
     <p><strong>Custom design and production, made with care.</strong><br><br>
         I offer <strong>white label design and fabrication services</strong> for small businesses, organizations, and
         creative collaborators looking to bring custom products to life—without the overhead of managing in-house

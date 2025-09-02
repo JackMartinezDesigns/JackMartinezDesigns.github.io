@@ -17,6 +17,12 @@ body.light {
     --border-color: #f7f2e9;
 }
 
+body.wildPersimmon {
+    background-color: rgb(255, 229, 39);
+    color: black;
+    --border-color: rgb(255, 229, 39);
+}
+
 /* Navigation Styling */
 .topnav {
     overflow: hidden;
