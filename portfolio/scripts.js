@@ -38,21 +38,32 @@ document.querySelectorAll(".image-switcher").forEach((switcher) => {
     });
 });
 
-// === Gallery Hover Overlay with Caption ===
+// === Gallery Overlay with Caption (Desktop + Mobile) ===
 const overlay = document.getElementById("overlay");
 const overlayImg = document.getElementById("overlay-img");
 const overlayCaption = document.getElementById("overlay-caption");
 const galleryItems = document.querySelectorAll(".gallery-item img");
 
+// Open overlay on click (works for mobile & desktop)
 galleryItems.forEach((img) => {
-    img.addEventListener("mouseenter", () => {
+    img.addEventListener("click", () => {
         overlayImg.src = img.src;
         overlayImg.alt = img.alt;
         overlayCaption.textContent = img.alt;
         overlay.classList.add("active");
     });
+});
 
-    img.addEventListener("mouseleave", () => {
+// Close overlay when clicking anywhere outside the image
+overlay.addEventListener("click", (e) => {
+    if (!overlayImg.contains(e.target)) {
         overlay.classList.remove("active");
-    });
+    }
+});
+
+// Optional: Press ESC to close overlay (desktop only)
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+        overlay.classList.remove("active");
+    }
 });

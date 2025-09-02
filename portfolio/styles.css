@@ -395,6 +395,25 @@ li {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Overlay Close Button */
+.gallery-overlay::after {
+    content: "✕";
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: black;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    padding: 0.25rem 0.6rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.gallery-overlay::after:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
 #overlay-caption {
     margin-top: 1rem;
     font-size: 1.2rem;
