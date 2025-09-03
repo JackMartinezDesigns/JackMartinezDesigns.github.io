@@ -514,3 +514,58 @@ html {
         width: 40%;
     }
 }
+
+/* Desktop formatting fixes:  */
+/* Reset body to normal flow */
+body {
+    display: block;
+    /* instead of flex */
+    font-family: monospace;
+    margin: 0;
+}
+
+.image-text-pair {
+    display: flex;
+    flex-direction: column;
+    /* default: stacked */
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.image-text-pair img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.image-text-pair p {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    /* match image width in stacked mode */
+}
+
+/* Medium screens and up */
+@media screen and (min-width: 40rem) {
+    .image-text-pair {
+        flex-direction: row;
+        /* side by side */
+        align-items: flex-start;
+    }
+
+    .image-text-pair img {
+        flex: 0 0 40%;
+        /* image fixed at ~40% of container */
+        max-width: 40%;
+        margin-right: 1.5rem;
+    }
+
+    .image-text-pair p {
+        flex: 1;
+        /* caption takes the rest */
+        width: auto;
+        /* override 100% from mobile */
+        text-align: left;
+    }
+}
