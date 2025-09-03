@@ -50,7 +50,7 @@ body.wildPersimmon {
     color: black;
 }
 
-/*footer stying*/
+/* Footer Styling */
 .footernav {
     width: 100%;
     background-color: #333;
@@ -95,15 +95,12 @@ body.wildPersimmon {
     line-height: 1.5;
 }
 
-
 /* Layout Basics */
 body {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+    display: block;
+    /* normal flow */
     font-family: monospace;
     margin: 0;
-    flex-basis: 100%;
 }
 
 .body-text {
@@ -192,7 +189,6 @@ body {
     aspect-ratio: 16 / 9;
 }
 
-/* On large screens: 60% video / 40% description */
 @media screen and (min-width: 800px) {
     .image-text-pair {
         flex-direction: row;
@@ -240,14 +236,13 @@ h1 {
     font-family: 'NectoMono', monospace;
     font-size: 4rem;
     flex-basis: 100%;
-    border: 2px solid var(--border-color);
+    border: none;
 }
 
 .title {
-    padding: 0rem;
-    padding-top: 1rem;
-    margin: 0rem;
-    padding-left: 1rem;
+    padding: 1rem 0 0 1rem;
+    margin: 0;
+    border: none;
     font-family: 'NectoMono', monospace;
 }
 
@@ -259,13 +254,9 @@ h2 {
     padding-left: 1rem;
 }
 
-div {
-    border-color: none;
-}
-
 p {
     font-family: 'NectoMono', monospace;
-    padding: 1rem 1rem 0rem 1rem;
+    padding: 1rem 1rem 0 1rem;
 }
 
 section {
@@ -274,6 +265,7 @@ section {
     flex-wrap: wrap;
 }
 
+/* Buttons */
 .button {
     color: black;
     font-family: monospace;
@@ -303,13 +295,6 @@ ol {
     margin: 0;
     padding: 0;
 }
-
-/* List element from game?  
-li {
-    background-color: azure;
-    transition: all 1s ease;
-}
-     */
 
 li {
     font-size: large;
@@ -347,13 +332,10 @@ li {
 .gallery-item {
     display: flex;
     justify-content: center;
-    /* center horizontally */
     align-items: center;
-    /* center vertically */
     overflow: hidden;
     position: relative;
     aspect-ratio: 4 / 5.35;
-    /* or whatever you're using */
     border-radius: 5px;
 }
 
@@ -369,7 +351,6 @@ li {
     transform: scale(1.05);
 }
 
-/* Overlay Styling */
 .gallery-overlay {
     position: fixed;
     top: 0;
@@ -401,7 +382,6 @@ li {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Overlay Close Button */
 .gallery-overlay::after {
     content: "✕";
     position: absolute;
@@ -429,7 +409,6 @@ li {
     padding: 0.5rem 1rem;
     border-radius: 4px;
     border: none;
-    background-color: none;
 }
 
 .overlay-content {
@@ -489,6 +468,7 @@ html {
 .image-text-pair img {
     max-width: 100%;
     height: auto;
+    border-radius: 4px;
 }
 
 .image-text-pair .description {
@@ -515,57 +495,56 @@ html {
     }
 }
 
-/* Desktop formatting fixes:  */
-/* Reset body to normal flow */
-body {
-    display: block;
-    /* instead of flex */
-    font-family: monospace;
-    margin: 0;
-}
-
-.image-text-pair {
-    display: flex;
-    flex-direction: column;
-    /* default: stacked */
-    align-items: center;
-    gap: 1rem;
-    margin: 2rem 0;
-}
-
-.image-text-pair img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-}
-
-.image-text-pair p {
-    margin: 0;
-    text-align: center;
-    width: 100%;
-    /* match image width in stacked mode */
-}
-
 /* Medium screens and up */
 @media screen and (min-width: 40rem) {
     .image-text-pair {
         flex-direction: row;
-        /* side by side */
         align-items: flex-start;
     }
 
     .image-text-pair img {
         flex: 0 0 40%;
-        /* image fixed at ~40% of container */
         max-width: 40%;
         margin-right: 1.5rem;
     }
 
-    .image-text-pair p {
+    .image-text-pair .description {
         flex: 1;
-        /* caption takes the rest */
         width: auto;
-        /* override 100% from mobile */
         text-align: left;
     }
+}
+
+/* styling sections */
+.section {
+    padding: 3rem 1rem;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+}
+
+/* Light Section */
+.section-light {
+    background-color: #fff9f2;
+}
+
+/* Dark Section */
+.section-dark {
+    background-color: #f2f2f2;
+}
+
+/* Dotted Section */
+.section-dots {
+    background-image: radial-gradient(#ccc 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-color: white;
+}
+
+/* Remove borders from blocks inside sections */
+.section img,
+.section .image-text-pair,
+.section .image-pair,
+.section .description,
+.section p,
+.section ul {
+    border: none !important;
 }

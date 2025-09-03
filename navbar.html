@@ -16,19 +16,26 @@
 </nav>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        // Get the current URL path
+        // Highlight the current page link
         var currentPath = window.location.pathname;
-        console.log('Current Path:', currentPath);
-        // Get all links in the navigation
         var navLinks = document.querySelectorAll('.topnav a');
 
         navLinks.forEach(function (link) {
-            // Compare the link's href with the current path
-            var linkPath = link.getAttribute('href');
-            console.log('Link Path:', linkPath);
+            var linkPath = new URL(link.getAttribute('href'), window.location.origin).pathname;
+
             if (linkPath === currentPath) {
                 link.classList.add('active');
-                console.log('Active class added to:', linkPath);
+
+                // Apply hover effect manually for inline styled link
+                link.addEventListener('mouseenter', function () {
+                    link.style.backgroundColor = 'var(--hover-grey)'; // dark grey hover
+                });
+                link.addEventListener('mouseleave', function () {
+                    // restore original inline background
+                    link.style.backgroundColor = 'rgb(255, 215, 30)';
+                });
+            } else {
+                // Optional: regular hover for non-active links is handled via CSS
             }
         });
     });
