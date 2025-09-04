@@ -7,7 +7,10 @@
     --border-color: white;
     --light-grey: #e6e5e3;
     --hover-grey: rgb(199, 196, 180);
+    --dandelion-yellow: rgb(255, 229, 39);
     --pale-grey: rgb(245, 242, 229);
+    --dark-dandelion: rgb(255, 215, 30);
+    --hot-pink: rgb(261, 65, 111);
 }
 
 /* Light Mode Defaults */
@@ -18,9 +21,9 @@ body.light {
 }
 
 body.wildPersimmon {
-    background-color: rgb(255, 229, 39);
+    background-color: var(--dandelion-yellow);
     color: black;
-    --border-color: rgb(255, 229, 39);
+    --border-color: var(--dandelion-yellow);
 }
 
 /* Navigation Styling */
@@ -125,24 +128,33 @@ body {
 
 .image-pair {
     display: flex;
-    align-items: stretch;
     gap: 1rem;
-    width: auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* allows stacking on small screens */
     max-width: 100%;
     margin: 2rem auto;
-    justify-content: center;
+    box-sizing: border-box;
 }
 
 .image-pair img {
-    height: auto;
-    max-height: 500px;
-    width: auto;
+    width: calc(50% - 0.5rem);
+    /* take half minus half the gap */
     max-width: 100%;
+    height: auto;
     display: block;
     border-radius: 8px;
 }
 
 @media screen and (max-width: 600px) {
+    .image-pair img {
+        width: 100%;
+        /* stack vertically on small screens */
+    }
+}
+
+
+/* @media screen and (max-width: 600px) {
     .image-pair {
         flex-direction: column;
         height: auto;
@@ -152,7 +164,7 @@ body {
         width: 100%;
         height: auto;
     }
-}
+} */
 
 @media screen and (min-width: 80rem) {
     .image-flex {
@@ -524,19 +536,55 @@ html {
 
 /* Light Section */
 .section-light {
-    background-color: #fff9f2;
+    background-color: floralwhite;
 }
 
 /* Dark Section */
 .section-dark {
-    background-color: #f2f2f2;
+    background-color: Moccasin;
+}
+
+/* Diagonal Stripes */
+.section-stripes-diagonal {
+    background-image: repeating-linear-gradient(45deg,
+            Moccasin,
+            Moccasin 10px,
+            cornsilk 10px,
+            cornsilk 20px);
+    background-color: cornsilk;
+}
+
+/* Checkerboard */
+.section-checker {
+    background-image:
+        linear-gradient(45deg, #ffd700 25%, transparent 25%),
+        linear-gradient(-45deg, #ffd700 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #ffd700 75%),
+        linear-gradient(-45deg, transparent 75%, #ffd700 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    background-color: #fffacd;
+}
+
+/* waves */
+.section-waves {
+    background-image: repeating-radial-gradient(circle at 50% 50%, #ffeb99 0, #ffeb99 5px, #fffacd 5px, #fffacd 10px);
+    background-color: #fffacd;
+}
+
+/* Crosshatching */
+.section-hatch {
+    background-image:
+        repeating-linear-gradient(0deg, #ffeb99, #ffeb99 1px, transparent 1px, transparent 10px),
+        repeating-linear-gradient(90deg, #ffeb99, #ffeb99 1px, transparent 1px, transparent 10px);
+    background-color: #fffacd;
 }
 
 /* Dotted Section */
 .section-dots {
-    background-image: radial-gradient(#ccc 1px, transparent 1px);
+    background-image: radial-gradient(var(--dandelion-yellow), 1.5px, transparent 1px);
     background-size: 20px 20px;
-    background-color: white;
+    background-color: seashell;
 }
 
 /* Remove borders from blocks inside sections */
