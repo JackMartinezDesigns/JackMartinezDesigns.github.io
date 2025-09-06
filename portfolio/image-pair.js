@@ -55,3 +55,26 @@
         initPairs();
     }
 })();
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Create the overlay element
+    const overlay = document.createElement('div');
+    overlay.className = 'image-lightbox-overlay';
+    const overlayImg = document.createElement('img');
+    overlay.appendChild(overlayImg);
+    document.body.appendChild(overlay);
+
+    // Clicking overlay closes it
+    overlay.addEventListener('click', () => {
+        overlay.classList.remove('active');
+    });
+
+    // Make all images inside .image-text-pair clickable
+    document.querySelectorAll('.image-text-pair img').forEach(img => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', () => {
+            overlayImg.src = img.src;
+            overlay.classList.add('active');
+        });
+    });
+});

@@ -67,3 +67,27 @@ document.addEventListener("keydown", (e) => {
         overlay.classList.remove("active");
     }
 });
+
+// for image expands: 
+document.addEventListener('DOMContentLoaded', () => {
+    // Create lightbox overlay
+    const overlay = document.createElement('div');
+    overlay.classList.add('image-lightbox-overlay');
+    const overlayImg = document.createElement('img');
+    overlay.appendChild(overlayImg);
+    document.body.appendChild(overlay);
+
+    // Close overlay on click
+    overlay.addEventListener('click', () => {
+        overlay.classList.remove('active');
+    });
+
+    // Make all images in .image-text-pair clickable
+    document.querySelectorAll('.image-text-pair img').forEach(img => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', () => {
+            overlayImg.src = img.src;  // use the same src
+            overlay.classList.add('active');
+        });
+    });
+});
