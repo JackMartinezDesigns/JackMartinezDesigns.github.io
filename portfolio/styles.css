@@ -165,7 +165,6 @@ body {
     border-radius: 8px;
 }
 
-
 /* Stack vertically on narrow screens */
 @media (max-width: 420px) {
     .image-pair {
@@ -179,7 +178,33 @@ body {
     }
 }
 
+.click-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.click-gallery img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    /* adjust to taste */
+    object-fit: contain;
+    border-radius: 8px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    /* shows it’s clickable */
+}
+
 @media screen and (min-width: 80rem) {
+    .click-gallery img {
+        width: 70%;
+        max-width: 80rem;
+    }
+
     .image-flex {
         display: flex;
         flex-wrap: wrap;

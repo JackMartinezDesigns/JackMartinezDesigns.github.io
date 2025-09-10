@@ -91,3 +91,53 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Array of images in your gallery
+    const galleryImages = [
+        "/portfolio/page-10/Images for Page 10/Zines Themselves/8-Fold Mutual Aid Zine.jpg",
+        "/portfolio/page-10/Images for Page 10/Zines Themselves/IMG_0329.jpeg",
+        "/portfolio/page-10/Images for Page 10/Zines Themselves/IMG_4490.png",
+        "/portfolio/page-10/Images for Page 10/Zines Themselves/Jack Martinez-Documentation Book-Letterpress Printing.jpeg",
+        "/portfolio/page-10/Images for Page 10/Zines Themselves/Jack Martinez-Documentation Book-Pamphlets + Collaborative Book.jpeg",
+        "/portfolio/page-10/Images for Page 10/Zines Themselves/Jack Martinez-Documentation Book-Zines 2.jpeg",
+        "/portfolio/page-10/Images for Page 10/Zines Themselves/Jack Martinez-Documentation Book-Zines.jpeg",
+        "/portfolio/page-10/Images for Page 10/Zines Themselves/Mutual Aid Zine.png",
+        "/portfolio/page-10/Images for Page 10/Zines Themselves/Scavenger Hunt Zine.png",
+        "/portfolio/page-10/Images for Page 10/Zines Themselves/Snow Zine Reverse-01.jpg",
+        "/portfolio/page-10/Images for Page 10/Zines Themselves/Snow Zine-01.jpg",
+        "/portfolio/page-10/Images for Page 10/Zines Themselves/Snow Zine-02.jpg",
+        "/portfolio/page-10/Images for Page 10/Zines Themselves/Snow Zine-03.jpg",
+        "/portfolio/page-10/Images for Page 10/Zines Themselves/Snow Zine-04.jpg",
+        "/portfolio/page-10/Images for Page 10/Zines Themselves/Snow Zine-05.jpg",
+        "/portfolio/page-10/Images for Page 10/Zines Themselves/Snow Zine-06.jpg",
+        "/portfolio/page-10/Images for Page 10/Zines Themselves/Snow Zine-07.jpg",
+        "/portfolio/page-10/Images for Page 10/Zines Themselves/Snow Zine-08.jpg",
+        "/portfolio/page-10/Images for Page 10/Zines Themselves/Snow Zine-09.jpg",
+        "/portfolio/page-10/Images for Page 10/Zines Themselves/Snow Zine-10.jpg",
+        "/portfolio/page-10/Images for Page 10/Zines Themselves/Snow Zine-11.jpg",
+        "/portfolio/page-10/Images for Page 10/Zines Themselves/Snow Zine-12.jpg",
+        "/portfolio/page-10/Images for Page 10/Zines Themselves/Snow Zine-13.jpg",
+        "/portfolio/page-10/Images for Page 10/Zines Themselves/Snow Zine-14.jpg",
+        "/portfolio/page-10/Images for Page 10/Zines Themselves/Snow Zine-15.jpg"
+    ];
+
+    let currentIndex = 0;
+    const galleryImage = document.getElementById("galleryImage");
+
+    galleryImage.addEventListener("click", function () {
+        currentIndex = (currentIndex + 1) % galleryImages.length; // cycle
+        galleryImage.src = galleryImages[currentIndex];
+    });
+});
+
+document.addEventListener("keydown", e => {
+    if (e.key === "ArrowRight") {
+        currentIndex = (currentIndex + 1) % galleryImages.length;
+        galleryImage.src = galleryImages[currentIndex];
+    }
+    if (e.key === "ArrowLeft") {
+        currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+        galleryImage.src = galleryImages[currentIndex];
+    }
+});
