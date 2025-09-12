@@ -183,10 +183,11 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
+    border-radius=8px;
 }
 
 .zines-click-gallery img {
-    width: 100%;
+    width: 90%;
     height: auto;
     max-height: 80vh;
     /* adjust to taste */
@@ -443,22 +444,42 @@ li {
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 999;
+    z-index: 2000;
+    /* higher than normal page */
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translateY(-100%);
+    background: rgba(0, 0, 0, 0.7);
+    /* << add background so overlay is obvious */
     opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    flex-direction: column;
     pointer-events: none;
+    transition: opacity 0.3s ease;
+    flex-direction: column;
 }
 
 .gallery-overlay.active {
-    transform: translateY(0);
     opacity: 1;
     pointer-events: auto;
 }
+
+/* clickable close button instead of pseudo-element */
+.gallery-overlay .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: black;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    padding: 0.25rem 0.6rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.gallery-overlay .close-btn:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
 
 .gallery-overlay img {
     max-width: 90%;
