@@ -178,14 +178,14 @@ body {
     }
 }
 
-.click-gallery {
+.zines-click-gallery {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
 }
 
-.click-gallery img {
+.zines-click-gallery img {
     width: 100%;
     height: auto;
     max-height: 80vh;
@@ -200,7 +200,7 @@ body {
 }
 
 @media screen and (min-width: 80rem) {
-    .click-gallery img {
+    .zines-click-gallery img {
         width: 70%;
         max-width: 80rem;
     }
