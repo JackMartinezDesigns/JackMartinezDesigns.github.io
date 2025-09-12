@@ -11,8 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
         "/portfolio/page-10/Images for Page 10/Zines Themselves/ZInes (Images)_Page_03.jpg",
         "/portfolio/page-10/Images for Page 10/Zines Themselves/ZInes (Images)_Page_15.jpg",
         "/portfolio/page-10/Images for Page 10/Zines Themselves/ZInes (Images)_Page_13.jpg",
-
-        "/portfolio/page-10/Images for Page 10/Zines Themselves/ZInes (Images)_Page_19.jpg",
         "/portfolio/page-10/Images for Page 10/Zines Themselves/Scavenger Hunt Zine.png",
         "/portfolio/page-10/Images for Page 10/Zines Themselves/ZInes (Images)_Page_28.jpg",
         "/portfolio/page-10/Images for Page 10/Zines Themselves/ZInes (Images)_Page_29.jpg",

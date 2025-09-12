@@ -2,13 +2,13 @@
 const darkModeButton = document.querySelector("#dark-mode");
 const lightModeButton = document.querySelector("#light-mode");
 
-darkModeButton?.addEventListener("click", function () {
+darkModeButton?.addEventListener("click", () => {
     document.body.classList.add("dark");
     document.body.classList.remove("light");
     console.log("Dark mode activated");
 });
 
-lightModeButton?.addEventListener("click", function () {
+lightModeButton?.addEventListener("click", () => {
     document.body.classList.add("light");
     document.body.classList.remove("dark");
     console.log("Light mode activated");
@@ -22,8 +22,7 @@ if (mytext) {
 
 // === Return input value from field (if needed elsewhere) ===
 window.returnText = function () {
-    const input = document.getElementById("userInput")?.value;
-    return input;
+    return document.getElementById("userInput")?.value;
 };
 
 // === Image Switcher ===
@@ -38,56 +37,70 @@ document.querySelectorAll(".image-switcher").forEach((switcher) => {
     });
 });
 
-// === Gallery Overlay with Caption (Desktop + Mobile) ===
-const overlay = document.getElementById("overlay");
-const overlayImg = document.getElementById("overlay-img");
-const overlayCaption = document.getElementById("overlay-caption");
-const galleryItems = document.querySelectorAll(".gallery-item img");
-
-// Open overlay on click (works for mobile & desktop)
-galleryItems.forEach((img) => {
-    img.addEventListener("click", () => {
-        overlayImg.src = img.src;
-        overlayImg.alt = img.alt;
-        overlayCaption.textContent = img.alt;
-        overlay.classList.add("active");
-    });
-});
-
-// Close overlay when clicking anywhere outside the image
-overlay.addEventListener("click", (e) => {
-    if (!overlayImg.contains(e.target)) {
-        overlay.classList.remove("active");
-    }
-});
-
-// Optional: Press ESC to close overlay (desktop only)
-document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-        overlay.classList.remove("active");
-    }
-});
-
-// for image expands: 
-document.addEventListener('DOMContentLoaded', () => {
-    // Create lightbox overlay
-    const overlay = document.createElement('div');
-    overlay.classList.add('image-lightbox-overlay');
-    const overlayImg = document.createElement('img');
+// === Simple Lightbox for .image-text-pair images ===
+document.addEventListener("DOMContentLoaded", () => {
+    const overlay = document.createElement("div");
+    overlay.classList.add("image-lightbox-overlay");
+    const overlayImg = document.createElement("img");
     overlay.appendChild(overlayImg);
     document.body.appendChild(overlay);
 
-    // Close overlay on click
-    overlay.addEventListener('click', () => {
-        overlay.classList.remove('active');
+    overlay.addEventListener("click", () => {
+        overlay.classList.remove("active");
     });
 
-    // Make all images in .image-text-pair clickable
-    document.querySelectorAll('.image-text-pair img').forEach(img => {
-        img.style.cursor = 'zoom-in';
-        img.addEventListener('click', () => {
-            overlayImg.src = img.src;  // use the same src
-            overlay.classList.add('active');
+    document.querySelectorAll(".image-text-pair img").forEach((img) => {
+        img.style.cursor = "zoom-in";
+        img.addEventListener("click", () => {
+            overlayImg.src = img.src;
+            overlay.classList.add("active");
         });
     });
 });
+
+// === Interactive Gallery with Captions ===
+function initInteractiveGallery() {
+    const galleryItems = document.querySelectorAll('.gallery-item img');
+    let overlay = document.querySelector('.gallery-overlay');
+
+    // Create overlay if it doesn't exist
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.classList.add('gallery-overlay');
+        overlay.innerHTML = `
+            <div class="overlay-content">
+                <img id="overlay-img" src="" alt="">
+                <div id="overlay-caption"></div>
+            </div>
+        `;
+        document.body.appendChild(overlay);
+    }
+
+    const overlayImg = overlay.querySelector('#overlay-img');
+    const overlayCaption = overlay.querySelector('#overlay-caption');
+
+    // Show image in overlay when clicking gallery item
+    galleryItems.forEach(img => {
+        img.addEventListener('click', () => {
+            overlayImg.src = img.src;
+            overlayImg.alt = img.alt || '';
+            overlayCaption.textContent = img.alt || '';
+            overlay.classList.add('active');
+        });
+    });
+
+    // Close overlay when clicking anywhere in overlay
+    overlay.addEventListener('click', (e) => {
+        overlay.classList.remove('active');
+    });
+
+    // Press ESC to close overlay
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            overlay.classList.remove('active');
+        }
+    });
+}
+
+// Initialize after DOM is ready
+document.addEventListener('DOMContentLoaded', initInteractiveGallery);
