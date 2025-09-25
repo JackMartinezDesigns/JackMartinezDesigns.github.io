@@ -178,7 +178,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    border-radius: 8px;
+    border-radius: 4vh;
 }
 
 .zines-click-gallery img,
@@ -187,7 +187,7 @@ body {
     height: auto;
     max-height: 80vh;
     object-fit: contain;
-    border-radius: 30px;
+    border-radius: 4vh;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -200,6 +200,8 @@ body {
     .patchworking-kit-click-gallery img {
         width: 70%;
         max-width: 80rem;
+        border-radius: 4vh;
+
     }
 
     .image-flex {
@@ -228,7 +230,7 @@ body {
     }
 
     h2 {
-        margin: 1rem auto 20px auto;
+        margin: .5rem .5rem .5rem .5rem;
         max-width: 60rem;
     }
 }
@@ -320,7 +322,7 @@ h2 {
     font-family: 'NectoMono', monospace;
     font-size: 2rem;
     flex-basis: 100%;
-    padding: 2rem;
+    padding: 0rem;
     /* fixed spacing */
     padding-left: 1rem;
 }
