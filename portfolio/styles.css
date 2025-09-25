@@ -10,7 +10,8 @@
     --dandelion-yellow: rgb(255, 229, 39);
     --pale-grey: rgb(245, 242, 229);
     --dark-dandelion: rgb(255, 215, 30);
-    --hot-pink: rgb(261, 65, 111);
+    --hot-pink: rgb(255, 65, 111);
+    /* fixed invalid 261 */
 }
 
 /* Light Mode Defaults */
@@ -118,10 +119,8 @@ body {
     flex-shrink: 1;
     width: 100%;
     display: block;
-    /* ensure it’s treated as a block element */
     margin-left: auto;
     margin-right: auto;
-    /* centers the image horizontally */
 }
 
 .anchor-image-flex {
@@ -135,16 +134,12 @@ body {
     width: 100%;
     margin-top: 1rem;
     clear: both;
-    /* ensures it sits below any floating or flex elements */
 }
 
 .section-hatch ul {
     clear: both;
-    /* ensures it starts below floated elements, if any */
     display: block;
-    /* default, just in case */
     margin-top: 1rem;
-    /* optional spacing from image-pair */
 }
 
 .image-pair {
@@ -152,7 +147,6 @@ body {
     justify-content: center;
     gap: 1rem;
     max-width: 60rem;
-    /* optional, matches other containers */
     margin-left: auto;
     margin-right: auto;
 }
@@ -178,7 +172,8 @@ body {
     }
 }
 
-.zines-click-gallery {
+.zines-click-gallery,
+.patchworking-kit-click-gallery {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -186,22 +181,23 @@ body {
     border-radius: 8px;
 }
 
-.zines-click-gallery img {
-    width: 90%;
+.zines-click-gallery img,
+.patchworking-kit-click-gallery img {
+    width: 50%;
     height: auto;
     max-height: 80vh;
-    /* adjust to taste */
     object-fit: contain;
-    border-radius: 8px;
+    border-radius: 30px;
     display: block;
     margin-left: auto;
     margin-right: auto;
     cursor: pointer;
-    /* shows it’s clickable */
 }
 
 @media screen and (min-width: 80rem) {
-    .zines-click-gallery img {
+
+    .zines-click-gallery img,
+    .patchworking-kit-click-gallery img {
         width: 70%;
         max-width: 80rem;
     }
@@ -214,7 +210,6 @@ body {
         width: 70%;
         margin-left: auto;
         margin-right: auto;
-        /* center the image container */
     }
 
     .description-container {
@@ -223,24 +218,18 @@ body {
         flex-basis: 25%;
         flex-grow: 1;
         max-width: 80rem;
-        /* prevent description from stretching too far */
         margin-left: auto;
         margin-right: auto;
-        /* optional: center if narrower than parent */
     }
 
     .description {
         margin: 0 auto 20px auto;
-        /* top 0, left/right auto, bottom 20px */
         max-width: 60rem;
-        /* limits width on large screens */
     }
 
     h2 {
         margin: 1rem auto 20px auto;
-        /* top 0, left/right auto, bottom 20px */
         max-width: 60rem;
-        /* limits width on large screens */
     }
 }
 
@@ -252,16 +241,12 @@ body {
     height: 100vh;
     box-sizing: border-box;
     padding: 1rem;
-    /* optional padding */
 }
 
 .video-wrapper iframe {
     height: 90vh;
-    /* scale based on viewport height */
     width: auto;
-    /* adjust width to maintain aspect ratio */
     max-width: 95%;
-    /* don’t overflow viewport width */
     border-radius: 8px;
     display: block;
 }
@@ -295,11 +280,9 @@ body {
 
     .video-wrapper iframe {
         height: 90vh;
-        /* scale based on viewport height */
         width: auto;
-        /* adjust width to maintain aspect ratio */
-        max-width: 60 rem;
-        /* don’t overflow viewport width */
+        max-width: 60rem;
+        /* fixed spacing */
         border-radius: 8px;
         display: block;
     }
@@ -337,13 +320,14 @@ h2 {
     font-family: 'NectoMono', monospace;
     font-size: 2rem;
     flex-basis: 100%;
-    padding: 2 rem;
+    padding: 2rem;
+    /* fixed spacing */
     padding-left: 1rem;
 }
 
 p {
     font-family: 'NectoMono', monospace;
-    padding: 1rem 1rem 1rem 1rem;
+    padding: 1rem;
 }
 
 section {
@@ -372,7 +356,8 @@ section {
 }
 
 a {
-    display: inline-box;
+    display: inline-block;
+    /* fixed invalid inline-box */
 }
 
 ol {
@@ -445,12 +430,10 @@ li {
     width: 100vw;
     height: 100vh;
     z-index: 2000;
-    /* higher than normal page */
     display: flex;
     justify-content: center;
     align-items: center;
     background: rgba(0, 0, 0, 0.7);
-    /* << add background so overlay is obvious */
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
@@ -462,7 +445,7 @@ li {
     pointer-events: auto;
 }
 
-/* clickable close button instead of pseudo-element */
+/* clickable close button */
 .gallery-overlay .close-btn {
     position: absolute;
     top: 20px;
@@ -480,7 +463,6 @@ li {
     background: rgba(255, 255, 255, 1);
 }
 
-
 .gallery-overlay img {
     max-width: 90%;
     max-height: 80vh;
@@ -489,23 +471,7 @@ li {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-.gallery-overlay::after {
-    content: "✕";
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 2rem;
-    color: black;
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 50%;
-    padding: 0.25rem 0.6rem;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.gallery-overlay::after:hover {
-    background: rgba(255, 255, 255, 1);
-}
+/* removed duplicate ::after ✕ to avoid double close button */
 
 #overlay-caption {
     margin-top: 1rem;
@@ -651,7 +617,6 @@ html {
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
 }
 
-
 /* styling sections */
 .section {
     padding: 3rem 1rem;
@@ -659,17 +624,14 @@ html {
     border-bottom: 4px solid transparent;
 }
 
-/* Light Section */
 .section-light {
     background-color: floralwhite;
 }
 
-/* Dark Section */
 .section-dark {
     background-color: #b66d48;
 }
 
-/* Diagonal Stripes */
 .section-stripes-diagonal {
     background-image: repeating-linear-gradient(45deg,
             Moccasin,
@@ -679,7 +641,6 @@ html {
     background-color: cornsilk;
 }
 
-/* Checkerboard */
 .section-checker {
     background-image:
         linear-gradient(45deg, #ffd700 25%, transparent 25%),
@@ -691,13 +652,11 @@ html {
     background-color: #fffacd;
 }
 
-/* waves */
 .section-waves {
     background-image: repeating-radial-gradient(circle at 50% 50%, #ffeb99 0, #ffeb99 5px, #fffacd 5px, #fffacd 10px);
     background-color: #fffacd;
 }
 
-/* Crosshatching */
 .section-hatch {
     background-image:
         repeating-linear-gradient(0deg, #ffeb99, #ffeb99 1px, transparent 1px, transparent 10px),
@@ -705,7 +664,6 @@ html {
     background-color: #fffacd;
 }
 
-/* Dotted Section */
 .section-dots {
     background-image: radial-gradient(var(--dandelion-yellow), 1.5px, transparent 1px);
     background-size: 20px 20px;
