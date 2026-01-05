@@ -384,8 +384,12 @@ main {
 h1 {
     font-family: 'NectoMono', monospace;
     font-size: 4rem;
-    flex-basis: 100%;
     border: none;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    display: block;
+    margin-right: auto;
 }
 
 .title {
