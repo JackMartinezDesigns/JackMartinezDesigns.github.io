@@ -1,0 +1,157 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Design Portfolio</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="scripts.js"></script>
+</head>
+
+<body>
+    <h1 class="title"> Jack Martinez - Industrial Design Portfolio </h1>
+    <!--Navigation bar-->
+    <div id="navbar"></div>
+    <p class="body-text">
+        This portfolio PDF includes a curated selection of work samples that highlight my approach to product design,
+        problem-solving, and visual communication. For a more comprehensive view of my projects, case studies, and
+        process,
+        please visit my full online portfolio at
+        <a href="https://jackmartinezdesigns.github.io/portfolio/index.html">jackmartinezdesigns.github.io</a>.
+        I
+        encourage you to explore the website for additional
+        context, detailed project breakdowns, and the most up-to-date examples of my work.
+        <br>
+        <br>
+        <a href="https://jackmartinezdesigns.github.io/portfolio/index.html" class="button"> Online Portfolio</a>
+    </p>
+
+    <!-- Navigation bar -->
+
+    <!-- Image Grid -->
+    <div class="interactive-gallery">
+        <div class="gallery-grid">
+            <div class="gallery-item-bold">
+                <div class="image-bin-bold">
+                    <img loading="lazy" src="/portfolio/page-11/Images for Page 11/DSC01528_edited_vertical.jpg" alt="">
+                </div>
+            </div>
+            <div class="gallery-item-bold">
+                <div class="image-bin-bold"> <img loading="lazy"
+                        src="../portfolio/page-2/Images for Page 2/aisle intervention 1.JPEG" alt="">
+                </div>
+            </div>
+            <div class="gallery-item-bold">
+                <div class="image-bin-bold"> <img loading="lazy"
+                        src="/portfolio/page-11/Images for Page 11/mikes bike kit render 3.png" alt="">
+                </div>
+            </div>
+            <div class="gallery-item-bold">
+                <div class="image-bin-bold"> <img loading="lazy"
+                        src="../portfolio/page-17/Images for Page 17/IMG_1782_2.JPEG" alt="">
+                </div>
+            </div>
+            <div class="gallery-item-bold">
+                <div class="image-bin-bold"> <img loading="lazy"
+                        src="../portfolio/page-9/Images for Page 9/IMG_2553.JPEG" alt="">
+                </div>
+            </div>
+            <div class="gallery-item-bold">
+                <div class="image-bin-bold"> <img loading="lazy"
+                        src="../portfolio/page-7/Images for Page 7/IMG_7622.JPEG" alt="">
+                </div>
+            </div>
+            <div class="gallery-item-bold">
+                <div class="image-bin-bold"> <img loading="lazy"
+                        src="../portfolio/page-8/Images for Page 8/DSC_4984_edited.jpg" alt="">
+                </div>
+            </div>
+            <div class="gallery-item-bold">
+                <div class="image-bin-bold"> <img loading="lazy"
+                        src="../portfolio/page-6/Images for Page 6/IMG_2855 - Copy.JPEG" alt="">
+                </div>
+            </div>
+            <div class="gallery-item-bold">
+                <div class="image-bin-bold"> <img loading="lazy"
+                        src="/portfolio/page-11/Images for Page 11/IMG_7071.png" alt="">
+                </div>
+            </div>
+            <div class="gallery-item-bold">
+                <div class="image-bin-bold"> <img loading="lazy"
+                        src="../portfolio/page-1/Images for Page 1/v-line_final.jpg" alt="">
+                </div>
+            </div>
+            <div class="gallery-item-bold">
+                <div class="image-bin-bold"> <img loading="lazy"
+                        src="/portfolio/page-11/Images for Page 11/IMG_8139.png" alt="">
+                </div>
+            </div>
+            <div class="gallery-item-bold">
+                <div class="image-bin-bold"> <img loading="lazy"
+                        src="../portfolio/page-3/Images for Page 3/IMG_3972 - Copy.jpeg" alt="">
+                </div>
+            </div>
+            <div class="gallery-item-bold">
+                <div class="image-bin-bold"> <img loading="lazy" src="../portfolio/portfolio images/tap-tap_gif_6.gif"
+                        alt="">
+                </div>
+            </div>
+            <div class="gallery-item-bold">
+                <div class="image-bin-bold"> <img loading="lazy"
+                        src="../portfolio/page-11/Images for Page 11/stax bed 2.jpg" alt="">
+                </div>
+            </div>
+            <div class="gallery-item-bold">
+                <div class="image-bin-bold"> <img loading="lazy" src="../portfolio/page-5/Images for Page 5/Jack 2.jpg"
+                        alt="">
+                </div>
+            </div>
+            <div class="gallery-item-bold">
+                <div class="image-bin-bold"> <img loading="lazy"
+                        src="../portfolio/page-11/Images for Page 11/IMG_8546_2.JPEG" alt="">
+                </div>
+            </div>
+            <div class="gallery-item-bold">
+                <div class="image-bin-bold"> <img loading="lazy"
+                        src="/portfolio/page-11/Images for Page 11/IMG_9347.GIF" alt="">
+                </div>
+            </div>
+            <div class="gallery-item-bold">
+                <div class="image-bin-bold"> <img loading="lazy"
+                        src="/portfolio/page-11/Images for Page 11/IMG_4201.JPEG" alt="">
+                </div>
+            </div>
+            <div class="gallery-item-bold">
+                <div class="image-bin-bold"> <img loading="lazy"
+                        src="/portfolio/page-11/Images for Page 11/IMG_8114.JPEG" alt="">
+                </div>
+            </div>
+            <div class="gallery-item-bold">
+                <div class="image-bin-bold">
+                    <img loading="lazy" src="/portfolio/page-11/Images for Page 11/IMG_1832.JPEG" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- Overlay with caption -->
+        <div class="gallery-overlay" id="overlay">
+            <div class="overlay-content">
+                <img loading="lazy" src="" alt="" id="overlay-img" />
+                <div id="overlay-caption"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Flip through pairs of images in elements marked with .flip-image
+        document.addEventListener("DOMContentLoaded", function () {
+            const flipElements = document.querySelectorAll(".flip-image");
+
+            flipElements.forEach(wrapper => {
+                const img = wrapper.querySelector("img");
+                const src1 = wrapper.dataset.src1;
+                const src2 = wrapper.dataset.src2;
+                let showingFirst = true;
+</body >
+<footer class="footernav" id="footer"></footer>
+<script src="/portfolio/footer.js"></script>
+
+</html>
