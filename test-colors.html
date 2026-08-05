@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Palette Swatches</title>
+    <style>
+        :root {
+            --bright-lemon: #f4e409ff;
+            --saffron: #eeba0bff;
+            --ochre: #c36f09ff;
+            --rust-brown: #a63c06ff;
+            --strawberry-red: #f54952ff;
+            --dark-garnet: #710000ff;
+            --night-bordeaux: #580c1fff;
+            --berry-crush: #ae2d68ff;
+            --deep-purple: #660f56ff;
+            --daisy-bush: #470b58ff;
+            --deep-twilight: #280659ff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            padding: 2rem;
+            margin: 0;
+        }
+
+        .palette-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .swatch {
+            background-color: #1e1e1e;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .color-box {
+            height: 120px;
+            width: 100%;
+        }
+
+        .info {
+            padding: 1rem;
+        }
+
+        .name {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .hex {
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: #aaaaaa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="palette-grid">
+        <div class="swatch">
+            <div class="color-box" style="background-color: var(--bright-lemon);"></div>
+            <div class="info">
+                <div class="name">--bright-lemon</div>
+                <div class="hex">#f4e409ff</div>
+            </div>
+        </div>
+
+        <div class="swatch">
+            <div class="color-box" style="background-color: var(--saffron);"></div>
+            <div class="info">
+                <div class="name">--saffron</div>
+                <div class="hex">#eeba0bff</div>
+            </div>
+        </div>
+
+        <div class="swatch">
+            <div class="color-box" style="background-color: var(--ochre);"></div>
+            <div class="info">
+                <div class="name">--ochre</div>
+                <div class="hex">#c36f09ff</div>
+            </div>
+        </div>
+
+        <div class="swatch">
+            <div class="color-box" style="background-color: var(--rust-brown);"></div>
+            <div class="info">
+                <div class="name">--rust-brown</div>
+                <div class="hex">#a63c06ff</div>
+            </div>
+        </div>
+
+        <div class="swatch">
+            <div class="color-box" style="background-color: var(--strawberry-red);"></div>
+            <div class="info">
+                <div class="name">--strawberry-red</div>
+                <div class="hex">#f54952ff</div>
+            </div>
+        </div>
+
+        <div class="swatch">
+            <div class="color-box" style="background-color: var(--dark-garnet);"></div>
+            <div class="info">
+                <div class="name">--dark-garnet</div>
+                <div class="hex">#710000ff</div>
+            </div>
+        </div>
+
+
+        <div class="swatch">
+            <div class="color-box" style="background-color: var(--night-bordeaux);"></div>
+            <div class="info">
+                <div class="name">--night-bordeaux</div>
+                <div class="hex">#580c1fff</div>
+            </div>
+        </div>
+
+        <div class="swatch">
+            <div class="color-box" style="background-color: var(--berry-crush);"></div>
+            <div class="info">
+                <div class="name">--berry-crush</div>
+                <div class="hex">#ae2d68ff</div>
+            </div>
+        </div>
+
+        <div class="swatch">
+            <div class="color-box" style="background-color: var(--deep-purple);"></div>
+            <div class="info">
+                <div class="name">--deep-purple</div>
+                <div class="hex">#660f56ff</div>
+            </div>
+        </div>
+
+        <div class="swatch">
+            <div class="color-box" style="background-color: var(--daisy-bush);"></div>
+            <div class="info">
+                <div class="name">--daisy-bush</div>
+                <div class="hex">#470b58ff</div>
+            </div>
+        </div>
+
+        <div class="swatch">
+            <div class="color-box" style="background-color: var(--deep-twilight);"></div>
+            <div class="info">
+                <div class="name">--deep-twilight</div>
+                <div class="hex">#280659ff</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
