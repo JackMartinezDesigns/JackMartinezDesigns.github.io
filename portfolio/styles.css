@@ -824,6 +824,26 @@ html {
     display: block;
 }
 
+.mySlides video {
+    width: 100%;
+    height: 400px;
+    /* Adjust this height to match your desired slideshow height */
+    object-fit: cover;
+    /* Ensures the video fills the frame squarely without distortion */
+    display: block;
+}
+
+/* .mySlides img {
+    width: 100%;
+    height: 400px;
+    /* Match the height of the video */
+object-fit: cover;
+/* Ensures images match the exact same box dimensions */
+display: block;
+}
+
+*/
+
 /* Image number */
 .numbertext {
     color: #f2f2f2;
